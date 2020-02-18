@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ServiceSchema\Service;
+namespace BrighteCapital\ServiceSchema\Service;
 
 
 class Service

@@ -24,12 +24,12 @@
   },
   "autoload": {
     "psr-4": {
-      "ServiceSchema\\": "src/"
+      "BrighteCapital\\ServiceSchema\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ServiceSchema\\Tests\\": "tests/"
+      "BrighteCapital\\ServiceSchema\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "dev"

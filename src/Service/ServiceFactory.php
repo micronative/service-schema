@@ -1,16 +1,16 @@
 <?php
 
-namespace ServiceSchema\Service;
+namespace BrighteCapital\ServiceSchema\Service;
 
-use ServiceSchema\Service\Exception\ServiceException;
+use BrighteCapital\ServiceSchema\Service\Exception\ServiceException;
 
 class ServiceFactory
 {
     /**
      * @param string|null $serviceClass
      * @param string|null $schema
-     * @return \ServiceSchema\Service\ServiceInterface|false
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @return \BrighteCapital\ServiceSchema\Service\ServiceInterface|false
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
     public function createService(string $serviceClass = null, string $schema = null)
     {

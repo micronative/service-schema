@@ -1,8 +1,8 @@
 <?php
 
-namespace ServiceSchema\Config\Exception;
+namespace BrighteCapital\ServiceSchema\Config\Exception;
 
-use ServiceSchema\Exception\ServiceSchemaException;
+use BrighteCapital\ServiceSchema\Exception\ServiceSchemaException;
 
 class ConfigException extends ServiceSchemaException
 {

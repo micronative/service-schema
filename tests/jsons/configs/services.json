@@ -1,21 +1,21 @@
 [
   {
-    "service": "ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
+    "service": "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
     "schema": "/jsons/schemas/CreateContact.json",
     "callbacks": [
-      "ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs",
-      "ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs",
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
     ]
   },
   {
-    "service": "ServiceSchema\\Tests\\Service\\Samples\\UpdateContact",
+    "service": "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\UpdateContact",
     "schema": "/jsons/schemas/UpdateContact.json",
     "callbacks": [
-      "ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
     ]
   },
   {
-    "service": "ServiceSchema\\Tests\\Service\\Samples\\CreateTask",
+    "service": "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\CreateTask",
     "schema": "/jsons/schemas/CreateTask.json"
   }
 ]

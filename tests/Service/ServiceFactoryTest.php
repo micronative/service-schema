@@ -1,10 +1,10 @@
 <?php
 
-namespace ServiceSchema\Tests\Service;
+namespace BrighteCapital\ServiceSchema\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Service\ServiceFactory;
-use ServiceSchema\Service\ServiceInterface;
+use BrighteCapital\ServiceSchema\Service\ServiceFactory;
+use BrighteCapital\ServiceSchema\Service\ServiceInterface;
 
 class ServiceFactoryTest extends TestCase
 {
@@ -21,12 +21,12 @@ class ServiceFactoryTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Service\ServiceFactory::createService
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @covers \BrighteCapital\ServiceSchema\Service\ServiceFactory::createService
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
     public function testCreateService()
     {
-        $serviceClass = "\ServiceSchema\Tests\Service\Samples\CreateContact";
+        $serviceClass = "\BrighteCapital\ServiceSchema\Tests\Service\Samples\CreateContact";
         $schema = $this->testDir . "/jsons/schemas/CreateContact.json";
         $service = $this->serviceFactory->createService($serviceClass, $schema);
         $this->assertTrue($service instanceof ServiceInterface);

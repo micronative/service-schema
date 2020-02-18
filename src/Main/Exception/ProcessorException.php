@@ -1,9 +1,9 @@
 <?php
 
 
-namespace ServiceSchema\Main\Exception;
+namespace BrighteCapital\ServiceSchema\Main\Exception;
 
-use ServiceSchema\Exception\ServiceSchemaException;
+use BrighteCapital\ServiceSchema\Exception\ServiceSchemaException;
 
 class ProcessorException extends ServiceSchemaException
 {

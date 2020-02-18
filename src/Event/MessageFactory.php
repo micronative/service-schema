@@ -1,17 +1,17 @@
 <?php
 
-namespace ServiceSchema\Event;
+namespace BrighteCapital\ServiceSchema\Event;
 
-use ServiceSchema\Json\Exception\JsonException;
-use ServiceSchema\Json\JsonReader;
+use BrighteCapital\ServiceSchema\Json\Exception\JsonException;
+use BrighteCapital\ServiceSchema\Json\JsonReader;
 
 class MessageFactory
 {
 
     /**
      * @param string|null $json
-     * @return false|\ServiceSchema\Event\Message
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @return false|\BrighteCapital\ServiceSchema\Event\Message
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function createMessage(string $json = null)
     {

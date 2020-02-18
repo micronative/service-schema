@@ -1,11 +1,11 @@
 <?php
 
-namespace ServiceSchema\Tests\Json;
+namespace BrighteCapital\ServiceSchema\Tests\Json;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Json\JsonReader;
-use ServiceSchema\Json\SchemaExporter;
-use ServiceSchema\Main\Processor;
+use BrighteCapital\ServiceSchema\Json\JsonReader;
+use BrighteCapital\ServiceSchema\Json\SchemaExporter;
+use BrighteCapital\ServiceSchema\Main\Processor;
 
 class SchemaExporterTest extends TestCase
 {
@@ -16,12 +16,12 @@ class SchemaExporterTest extends TestCase
     protected $message;
 
     /**
-     * @var $processor \ServiceSchema\Main\Processor
+     * @var $processor \BrighteCapital\ServiceSchema\Main\Processor
      */
     protected $processor;
 
     /**
-     * @var $schemaExporter \ServiceSchema\Json\SchemaExporter
+     * @var $schemaExporter \BrighteCapital\ServiceSchema\Json\SchemaExporter
      */
     protected $schemaExporter;
 
@@ -37,9 +37,9 @@ class SchemaExporterTest extends TestCase
     }
 
     /**
-     * @covers ServiceSchema\Json\SchemaExporter::__construct
-     * @covers ServiceSchema\Json\SchemaExporter::export
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers BrighteCapital\ServiceSchema\Json\SchemaExporter::__construct
+     * @covers BrighteCapital\ServiceSchema\Json\SchemaExporter::export
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testExport()
     {

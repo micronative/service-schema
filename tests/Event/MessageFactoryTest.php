@@ -1,10 +1,10 @@
 <?php
 
-namespace ServiceSchema\Tests\Event;
+namespace BrighteCapital\ServiceSchema\Tests\Event;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Event\Message;
-use ServiceSchema\Event\MessageFactory;
+use BrighteCapital\ServiceSchema\Event\Message;
+use BrighteCapital\ServiceSchema\Event\MessageFactory;
 
 class MessageFactoryTest extends TestCase
 {
@@ -17,12 +17,12 @@ class MessageFactoryTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Event\MessageFactory::createMessage
-     * @covers \ServiceSchema\Event\MessageFactory::validate
-     * @covers \ServiceSchema\Event\Message::getEvent
-     * @covers \ServiceSchema\Event\Message::getTime
-     * @covers \ServiceSchema\Event\Message::getPayload
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Event\MessageFactory::createMessage
+     * @covers \BrighteCapital\ServiceSchema\Event\MessageFactory::validate
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::getEvent
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::getTime
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::getPayload
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testCreateEvent()
     {

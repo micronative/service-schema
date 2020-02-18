@@ -1,11 +1,11 @@
 <?php
 
-namespace ServiceSchema\Tests\Service\Samples;
+namespace BrighteCapital\ServiceSchema\Tests\Service\Samples;
 
-use ServiceSchema\Event\Message;
-use ServiceSchema\Event\MessageInterface;
-use ServiceSchema\Service\Service;
-use ServiceSchema\Service\ServiceInterface;
+use BrighteCapital\ServiceSchema\Event\Message;
+use BrighteCapital\ServiceSchema\Event\MessageInterface;
+use BrighteCapital\ServiceSchema\Service\Service;
+use BrighteCapital\ServiceSchema\Service\ServiceInterface;
 
 class CreateContact extends Service implements ServiceInterface
 {

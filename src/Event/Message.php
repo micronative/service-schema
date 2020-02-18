@@ -1,8 +1,8 @@
 <?php
 
-namespace ServiceSchema\Event;
+namespace BrighteCapital\ServiceSchema\Event;
 
-use ServiceSchema\Json\JsonReader;
+use BrighteCapital\ServiceSchema\Json\JsonReader;
 
 class Message implements MessageInterface
 {
@@ -54,7 +54,7 @@ class Message implements MessageInterface
 
     /**
      * @return false|string
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function toJson()
     {
@@ -81,7 +81,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $id
-     * @return \ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Message
      */
     public function setId(string $id = null)
     {
@@ -100,7 +100,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $event
-     * @return \ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Message
      */
     public function setEvent(string $event = null)
     {
@@ -119,7 +119,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $time
-     * @return \ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Message
      */
     public function setTime(string $time = null)
     {
@@ -138,7 +138,7 @@ class Message implements MessageInterface
 
     /**
      * @param array|\stdClass|null $payload
-     * @return \ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Message
      */
     public function setPayload($payload = null)
     {
@@ -157,7 +157,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $status
-     * @return \ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Message
      */
     public function setStatus(string $status = null)
     {
@@ -176,7 +176,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $description
-     * @return \ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Message
      */
     public function setDescription(string $description = null)
     {
@@ -195,7 +195,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $source
-     * @return \ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Message
      */
     public function setSource(string $source = null)
     {
@@ -214,7 +214,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $sagaId
-     * @return \ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Message
      */
     public function setSagaId(string $sagaId = null)
     {
@@ -233,7 +233,7 @@ class Message implements MessageInterface
 
     /**
      * @param array|\stdClass|null $attributes
-     * @return \ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Message
      */
     public function setAttributes($attributes = null)
     {

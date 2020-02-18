@@ -1,12 +1,12 @@
 <?php
 
-namespace ServiceSchema\Tests\Main;
+namespace BrighteCapital\ServiceSchema\Tests\Main;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Json\JsonReader;
-use ServiceSchema\Main\Processor;
-use ServiceSchema\Service\Exception\ServiceException;
-use ServiceSchema\Service\SagaInterface;
+use BrighteCapital\ServiceSchema\Json\JsonReader;
+use BrighteCapital\ServiceSchema\Main\Processor;
+use BrighteCapital\ServiceSchema\Service\Exception\ServiceException;
+use BrighteCapital\ServiceSchema\Service\SagaInterface;
 
 class ProcessorTest extends TestCase
 {
@@ -23,9 +23,9 @@ class ProcessorTest extends TestCase
     }
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Main\Exception\ProcessorException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Main\Exception\ProcessorException
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
     public function testProcess()
     {
@@ -35,9 +35,9 @@ class ProcessorTest extends TestCase
     }
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Main\Exception\ProcessorException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Main\Exception\ProcessorException
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
     public function testProcessFailed()
     {
@@ -47,9 +47,9 @@ class ProcessorTest extends TestCase
     }
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Main\Exception\ProcessorException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Main\Exception\ProcessorException
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
     public function testRollback()
     {

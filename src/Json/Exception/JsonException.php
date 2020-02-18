@@ -1,8 +1,8 @@
 <?php
 
-namespace ServiceSchema\Json\Exception;
+namespace BrighteCapital\ServiceSchema\Json\Exception;
 
-use ServiceSchema\Exception\ServiceSchemaException;
+use BrighteCapital\ServiceSchema\Exception\ServiceSchemaException;
 
 class JsonException extends ServiceSchemaException
 {

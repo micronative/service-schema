@@ -1,9 +1,9 @@
 <?php
 
-namespace ServiceSchema\Tests\Config;
+namespace BrighteCapital\ServiceSchema\Tests\Config;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Config\EventRegister;
+use BrighteCapital\ServiceSchema\Config\EventRegister;
 
 class EventRegisterTest extends TestCase
 {
@@ -13,7 +13,7 @@ class EventRegisterTest extends TestCase
     protected $eventRegister;
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function setUp()
     {
@@ -23,8 +23,8 @@ class EventRegisterTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Config\EventRegister::loadEvents
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Config\EventRegister::loadEvents
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testLoadEvents()
     {
@@ -36,8 +36,8 @@ class EventRegisterTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Config\EventRegister::registerEvent
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Config\EventRegister::registerEvent
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testRegisterEvent()
     {
@@ -50,8 +50,8 @@ class EventRegisterTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Config\EventRegister::retrieveEvent
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Config\EventRegister::retrieveEvent
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testRetrieveEvent()
     {
@@ -64,11 +64,11 @@ class EventRegisterTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Config\EventRegister::getConfigs
-     * @covers \ServiceSchema\Config\EventRegister::setConfigs
-     * @covers \ServiceSchema\Config\EventRegister::getEvents
-     * @covers \ServiceSchema\Config\EventRegister::setEvents
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Config\EventRegister::getConfigs
+     * @covers \BrighteCapital\ServiceSchema\Config\EventRegister::setConfigs
+     * @covers \BrighteCapital\ServiceSchema\Config\EventRegister::getEvents
+     * @covers \BrighteCapital\ServiceSchema\Config\EventRegister::setEvents
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testGetterAndSetters()
     {

@@ -2,14 +2,14 @@
   {
     "event": "Users.afterSaveCommit.Create",
     "services": [
-      "ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
-      "ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
     ]
   },
   {
     "event": "Users.afterSaveCommit.Update",
     "services": [
-      "ServiceSchema\\Tests\\Service\\Samples\\UpdateContact"
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\UpdateContact"
     ]
   }
 ]

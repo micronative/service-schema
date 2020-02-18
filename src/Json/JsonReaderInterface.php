@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ServiceSchema\Json;
+namespace BrighteCapital\ServiceSchema\Json;
 
 
 interface JsonReaderInterface

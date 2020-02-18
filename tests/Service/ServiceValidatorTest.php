@@ -1,11 +1,11 @@
 <?php
 
-namespace ServiceSchema\Tests\Service;
+namespace BrighteCapital\ServiceSchema\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Json\JsonReader;
-use ServiceSchema\Service\ServiceValidator;
-use ServiceSchema\Tests\Service\Samples\CreateContact;
+use BrighteCapital\ServiceSchema\Json\JsonReader;
+use BrighteCapital\ServiceSchema\Service\ServiceValidator;
+use BrighteCapital\ServiceSchema\Tests\Service\Samples\CreateContact;
 
 class ServiceValidatorTest extends TestCase
 {
@@ -21,13 +21,13 @@ class ServiceValidatorTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Service\ServiceValidator::validate
-     * @covers \ServiceSchema\Service\ServiceValidator::getValidator
-     * @covers \ServiceSchema\Service\ServiceValidator::setValidator
-     * @covers \ServiceSchema\Service\ServiceValidator::getSchemaDir
-     * @covers \ServiceSchema\Service\ServiceValidator::setSchemaDir
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @covers \BrighteCapital\ServiceSchema\Service\ServiceValidator::validate
+     * @covers \BrighteCapital\ServiceSchema\Service\ServiceValidator::getValidator
+     * @covers \BrighteCapital\ServiceSchema\Service\ServiceValidator::setValidator
+     * @covers \BrighteCapital\ServiceSchema\Service\ServiceValidator::getSchemaDir
+     * @covers \BrighteCapital\ServiceSchema\Service\ServiceValidator::setSchemaDir
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
     public function testValidate()
     {

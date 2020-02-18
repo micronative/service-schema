@@ -1,6 +1,6 @@
 <?php
 
-namespace ServiceSchema\Exception;
+namespace BrighteCapital\ServiceSchema\Exception;
 
 class ServiceSchemaException extends \Exception
 {

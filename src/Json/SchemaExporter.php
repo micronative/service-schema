@@ -1,14 +1,14 @@
 <?php
 
-namespace ServiceSchema\Json;
+namespace BrighteCapital\ServiceSchema\Json;
 
-use ServiceSchema\Config\ServiceRegister;
-use ServiceSchema\Main\Processor;
+use BrighteCapital\ServiceSchema\Config\ServiceRegister;
+use BrighteCapital\ServiceSchema\Main\Processor;
 
 class SchemaExporter
 {
 
-    /** @var \ServiceSchema\Main\Processor */
+    /** @var \BrighteCapital\ServiceSchema\Main\Processor */
     protected $processor;
 
     const SCHEMA_EXTENSION = 'json';
@@ -18,7 +18,7 @@ class SchemaExporter
     /**
      * SchemaReader constructor.
      *
-     * @param \ServiceSchema\Main\Processor|null $processor
+     * @param \BrighteCapital\ServiceSchema\Main\Processor|null $processor
      */
     public function __construct(Processor $processor = null)
     {
@@ -28,7 +28,7 @@ class SchemaExporter
     /**
      * @param int $returnType
      * @return array|string
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function export(int $returnType = self::RETURN_ARRAY)
     {

@@ -1,9 +1,9 @@
 <?php
 
-namespace ServiceSchema\Tests\Event;
+namespace BrighteCapital\ServiceSchema\Tests\Event;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Event\Message;
+use BrighteCapital\ServiceSchema\Event\Message;
 
 class MessageTest extends TestCase
 {
@@ -17,25 +17,25 @@ class MessageTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Event\Message::setPayload
-     * @covers \ServiceSchema\Event\Message::setTime
-     * @covers \ServiceSchema\Event\Message::setEvent
-     * @covers \ServiceSchema\Event\Message::setId
-     * @covers \ServiceSchema\Event\Message::getId
-     * @covers \ServiceSchema\Event\Message::setStatus
-     * @covers \ServiceSchema\Event\Message::getStatus
-     * @covers \ServiceSchema\Event\Message::setDescription
-     * @covers \ServiceSchema\Event\Message::getDescription
-     * @covers \ServiceSchema\Event\Message::setSource
-     * @covers \ServiceSchema\Event\Message::getSource
-     * @covers \ServiceSchema\Event\Message::setSagaId
-     * @covers \ServiceSchema\Event\Message::getSagaId
-     * @covers \ServiceSchema\Event\Message::setAttribute
-     * @covers \ServiceSchema\Event\Message::getAttribute
-     * @covers \ServiceSchema\Event\Message::setAttributes
-     * @covers \ServiceSchema\Event\Message::getAttributes
-     * @covers \ServiceSchema\Event\Message::toJson
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::setPayload
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::setTime
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::setEvent
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::setId
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::getId
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::setStatus
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::getStatus
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::setDescription
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::getDescription
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::setSource
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::getSource
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::setSagaId
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::getSagaId
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::setAttribute
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::getAttribute
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::setAttributes
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::getAttributes
+     * @covers \BrighteCapital\ServiceSchema\Event\Message::toJson
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testToJson()
     {

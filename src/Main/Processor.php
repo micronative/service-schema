@@ -1,36 +1,36 @@
 <?php
 
-namespace ServiceSchema\Main;
+namespace BrighteCapital\ServiceSchema\Main;
 
-use ServiceSchema\Config\EventRegister;
-use ServiceSchema\Config\ServiceRegister;
-use ServiceSchema\Event\Message;
-use ServiceSchema\Event\MessageFactory;
-use ServiceSchema\Event\MessageInterface;
-use ServiceSchema\Json\JsonReader;
-use ServiceSchema\Main\Exception\ProcessorException;
-use ServiceSchema\Service\Exception\ServiceException;
-use ServiceSchema\Service\SagaInterface;
-use ServiceSchema\Service\ServiceFactory;
-use ServiceSchema\Service\ServiceInterface;
-use ServiceSchema\Service\ServiceValidator;
+use BrighteCapital\ServiceSchema\Config\EventRegister;
+use BrighteCapital\ServiceSchema\Config\ServiceRegister;
+use BrighteCapital\ServiceSchema\Event\Message;
+use BrighteCapital\ServiceSchema\Event\MessageFactory;
+use BrighteCapital\ServiceSchema\Event\MessageInterface;
+use BrighteCapital\ServiceSchema\Json\JsonReader;
+use BrighteCapital\ServiceSchema\Main\Exception\ProcessorException;
+use BrighteCapital\ServiceSchema\Service\Exception\ServiceException;
+use BrighteCapital\ServiceSchema\Service\SagaInterface;
+use BrighteCapital\ServiceSchema\Service\ServiceFactory;
+use BrighteCapital\ServiceSchema\Service\ServiceInterface;
+use BrighteCapital\ServiceSchema\Service\ServiceValidator;
 
 class Processor implements ProcessorInterface
 {
 
-    /** @var \ServiceSchema\Config\EventRegister */
+    /** @var \BrighteCapital\ServiceSchema\Config\EventRegister */
     protected $eventRegister;
 
-    /** @var \ServiceSchema\Config\ServiceRegister */
+    /** @var \BrighteCapital\ServiceSchema\Config\ServiceRegister */
     protected $serviceRegister;
 
-    /** @var \ServiceSchema\Event\MessageFactory */
+    /** @var \BrighteCapital\ServiceSchema\Event\MessageFactory */
     protected $messageFactory;
 
-    /** @var \ServiceSchema\Service\ServiceFactory */
+    /** @var \BrighteCapital\ServiceSchema\Service\ServiceFactory */
     protected $serviceFactory;
 
-    /** @var \ServiceSchema\Service\ServiceValidator */
+    /** @var \BrighteCapital\ServiceSchema\Service\ServiceValidator */
     protected $serviceValidator;
 
     /**
@@ -39,7 +39,7 @@ class Processor implements ProcessorInterface
      * @param array|null $eventConfigs
      * @param array|null $serviceConfigs
      * @param string|null $schemaDir
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function __construct(array $eventConfigs = null, array $serviceConfigs = null, string $schemaDir = null)
     {
@@ -52,7 +52,7 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     protected function loadConfigs()
     {
@@ -61,13 +61,13 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param string|\ServiceSchema\Event\Message $message
+     * @param string|\BrighteCapital\ServiceSchema\Event\Message $message
      * @param bool $return return first service result
      * @param array|null $filteredEvents
      * @return bool
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
-     * @throws \ServiceSchema\Main\Exception\ProcessorException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
+     * @throws \BrighteCapital\ServiceSchema\Main\Exception\ProcessorException
      */
     public function process($message = null, array $filteredEvents = null, bool $return = false)
     {
@@ -113,9 +113,9 @@ class Processor implements ProcessorInterface
     /**
      * @param null $message
      * @return bool
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Main\Exception\ProcessorException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Main\Exception\ProcessorException
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
     public function rollback($message = null)
     {
@@ -153,9 +153,9 @@ class Processor implements ProcessorInterface
 
     /**
      * @param $json
-     * @return false|\ServiceSchema\Event\Message
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Main\Exception\ProcessorException
+     * @return false|\BrighteCapital\ServiceSchema\Event\Message
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Main\Exception\ProcessorException
      */
     public function createMessage($json = null)
     {
@@ -172,11 +172,11 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param \ServiceSchema\Event\MessageInterface|null $message
-     * @param \ServiceSchema\Service\SagaInterface|null $service
-     * @return bool|\ServiceSchema\Event\MessageInterface
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @param \BrighteCapital\ServiceSchema\Event\MessageInterface|null $message
+     * @param \BrighteCapital\ServiceSchema\Service\SagaInterface|null $service
+     * @return bool|\BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
     public function rollbackService(MessageInterface $message = null, SagaInterface $service = null)
     {
@@ -194,13 +194,13 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param \ServiceSchema\Event\MessageInterface|null $message
-     * @param \ServiceSchema\Service\ServiceInterface|null $service
+     * @param \BrighteCapital\ServiceSchema\Event\MessageInterface|null $message
+     * @param \BrighteCapital\ServiceSchema\Service\ServiceInterface|null $service
      * @param array $callbacks
      * @param bool $return
      * @return bool
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
     public function runService(MessageInterface $message = null, ServiceInterface $service = null, array $callbacks = null, bool $return = false)
     {
@@ -227,10 +227,10 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param \ServiceSchema\Event\MessageInterface|null $event
+     * @param \BrighteCapital\ServiceSchema\Event\MessageInterface|null $event
      * @param array|null $callbacks
      * @return bool
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
     public function runCallbacks(MessageInterface $event, array $callbacks = null)
     {
@@ -251,7 +251,7 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @return \ServiceSchema\Config\EventRegister
+     * @return \BrighteCapital\ServiceSchema\Config\EventRegister
      */
     public function getEventRegister()
     {
@@ -259,8 +259,8 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param \ServiceSchema\Config\EventRegister $eventRegister
-     * @return \ServiceSchema\Main\Processor
+     * @param \BrighteCapital\ServiceSchema\Config\EventRegister $eventRegister
+     * @return \BrighteCapital\ServiceSchema\Main\Processor
      */
     public function setEventRegister(EventRegister $eventRegister = null)
     {
@@ -270,7 +270,7 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @return \ServiceSchema\Config\ServiceRegister
+     * @return \BrighteCapital\ServiceSchema\Config\ServiceRegister
      */
     public function getServiceRegister()
     {
@@ -278,8 +278,8 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param \ServiceSchema\Config\ServiceRegister $serviceRegister
-     * @return \ServiceSchema\MainProcessor
+     * @param \BrighteCapital\ServiceSchema\Config\ServiceRegister $serviceRegister
+     * @return \BrighteCapital\ServiceSchema\MainProcessor
      */
     public function setServiceRegister(ServiceRegister $serviceRegister = null)
     {
@@ -289,7 +289,7 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @return \ServiceSchema\Event\MessageFactory
+     * @return \BrighteCapital\ServiceSchema\Event\MessageFactory
      */
     public function getMessageFactory()
     {
@@ -297,8 +297,8 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param \ServiceSchema\Event\MessageFactory $messageFactory
-     * @return \ServiceSchema\Main\Processor
+     * @param \BrighteCapital\ServiceSchema\Event\MessageFactory $messageFactory
+     * @return \BrighteCapital\ServiceSchema\Main\Processor
      */
     public function setMessageFactory(MessageFactory $messageFactory = null)
     {
@@ -308,7 +308,7 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @return \ServiceSchema\Service\ServiceFactory
+     * @return \BrighteCapital\ServiceSchema\Service\ServiceFactory
      */
     public function getServiceFactory()
     {
@@ -316,8 +316,8 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param \ServiceSchema\Service\ServiceFactory $serviceFactory
-     * @return \ServiceSchema\Main\Processor
+     * @param \BrighteCapital\ServiceSchema\Service\ServiceFactory $serviceFactory
+     * @return \BrighteCapital\ServiceSchema\Main\Processor
      */
     public function setServiceFactory(ServiceFactory $serviceFactory = null)
     {
@@ -327,7 +327,7 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @return \ServiceSchema\Service\ServiceValidator
+     * @return \BrighteCapital\ServiceSchema\Service\ServiceValidator
      */
     public function getServiceValidator()
     {
@@ -335,8 +335,8 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param \ServiceSchema\Service\ServiceValidator $serviceValidator
-     * @return \ServiceSchema\Main\Processor
+     * @param \BrighteCapital\ServiceSchema\Service\ServiceValidator $serviceValidator
+     * @return \BrighteCapital\ServiceSchema\Main\Processor
      */
     public function setServiceValidator(ServiceValidator $serviceValidator = null)
     {

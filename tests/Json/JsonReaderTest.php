@@ -1,10 +1,10 @@
 <?php
 
-namespace ServiceSchema\Tests\Json;
+namespace BrighteCapital\ServiceSchema\Tests\Json;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Json\Exception\JsonException;
-use ServiceSchema\Json\JsonReader;
+use BrighteCapital\ServiceSchema\Json\Exception\JsonException;
+use BrighteCapital\ServiceSchema\Json\JsonReader;
 
 class JsonReaderTest extends TestCase
 {
@@ -18,8 +18,8 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::read
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Json\JsonReader::read
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testReadFailed()
     {
@@ -31,9 +31,9 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::decode
-     * @covers \ServiceSchema\Json\JsonReader::read
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Json\JsonReader::decode
+     * @covers \BrighteCapital\ServiceSchema\Json\JsonReader::read
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testDecodeFailed()
     {
@@ -42,8 +42,8 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::read
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Json\JsonReader::read
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testRead()
     {
@@ -53,9 +53,9 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::read
-     * @covers \ServiceSchema\Json\JsonReader::decode
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Json\JsonReader::read
+     * @covers \BrighteCapital\ServiceSchema\Json\JsonReader::decode
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testDecode()
     {
@@ -73,8 +73,8 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::encode
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Json\JsonReader::encode
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testEncodeFailed()
     {
@@ -83,8 +83,8 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::encode
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Json\JsonReader::encode
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testEncode()
     {
@@ -94,8 +94,8 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::save
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \BrighteCapital\ServiceSchema\Json\JsonReader::save
+     * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
     public function testSave()
     {
