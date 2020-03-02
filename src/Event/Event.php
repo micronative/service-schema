@@ -11,13 +11,13 @@ class Event implements EventInterface
     protected $id;
 
     /** @var string */
-    protected $name;
+    public $name;
 
     /** @var string */
-    protected $time;
+    public $time;
 
     /** @var array|null|\stdClass */
-    protected $payload;
+    public $payload;
 
     /** @var string */
     protected $source;
