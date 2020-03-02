@@ -2,15 +2,15 @@
 
 namespace BrighteCapital\ServiceSchema\Service;
 
-use BrighteCapital\ServiceSchema\Event\MessageInterface;
+use BrighteCapital\ServiceSchema\Event\EventInterface;
 
 interface ServiceInterface
 {
     /**
-     * @param \BrighteCapital\ServiceSchema\Event\MessageInterface $message
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface|bool
+     * @param \BrighteCapital\ServiceSchema\Event\EventInterface $event
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface|bool
      */
-    public function consume(MessageInterface $message = null);
+    public function consume(EventInterface $event = null);
 
     /**
      * @param string $schema

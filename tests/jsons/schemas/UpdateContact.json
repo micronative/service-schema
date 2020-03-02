@@ -1,7 +1,7 @@
 {
   "type": "object",
   "properties": {
-    "event": {
+    "name": {
       "type": "string",
       "minLength": 0,
       "maxLength": 256
@@ -47,7 +47,7 @@
     }
   },
   "required": [
-    "event",
+    "name",
     "payload"
   ],
   "additionalProperties": true

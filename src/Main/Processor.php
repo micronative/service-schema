@@ -4,9 +4,9 @@ namespace BrighteCapital\ServiceSchema\Main;
 
 use BrighteCapital\ServiceSchema\Config\EventRegister;
 use BrighteCapital\ServiceSchema\Config\ServiceRegister;
-use BrighteCapital\ServiceSchema\Event\Message;
-use BrighteCapital\ServiceSchema\Event\MessageFactory;
-use BrighteCapital\ServiceSchema\Event\MessageInterface;
+use BrighteCapital\ServiceSchema\Event\Event;
+use BrighteCapital\ServiceSchema\Event\EventFactory;
+use BrighteCapital\ServiceSchema\Event\EventInterface;
 use BrighteCapital\ServiceSchema\Json\JsonReader;
 use BrighteCapital\ServiceSchema\Main\Exception\ProcessorException;
 use BrighteCapital\ServiceSchema\Service\Exception\ServiceException;
@@ -24,8 +24,8 @@ class Processor implements ProcessorInterface
     /** @var \BrighteCapital\ServiceSchema\Config\ServiceRegister */
     protected $serviceRegister;
 
-    /** @var \BrighteCapital\ServiceSchema\Event\MessageFactory */
-    protected $messageFactory;
+    /** @var \BrighteCapital\ServiceSchema\Event\EventFactory */
+    protected $eventFactory;
 
     /** @var \BrighteCapital\ServiceSchema\Service\ServiceFactory */
     protected $serviceFactory;
@@ -46,7 +46,7 @@ class Processor implements ProcessorInterface
         $this->eventRegister = new EventRegister($eventConfigs);
         $this->serviceRegister = new ServiceRegister($serviceConfigs);
         $this->serviceFactory = new ServiceFactory();
-        $this->messageFactory = new MessageFactory();
+        $this->eventFactory = new EventFactory();
         $this->serviceValidator = new ServiceValidator(null, $schemaDir);
         $this->loadConfigs();
     }
@@ -61,7 +61,7 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param string|\BrighteCapital\ServiceSchema\Event\Message $message
+     * @param string|\BrighteCapital\ServiceSchema\Event\Event $event
      * @param bool $return return first service result
      * @param array|null $filteredEvents
      * @return bool
@@ -69,16 +69,16 @@ class Processor implements ProcessorInterface
      * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      * @throws \BrighteCapital\ServiceSchema\Main\Exception\ProcessorException
      */
-    public function process($message = null, array $filteredEvents = null, bool $return = false)
+    public function process($event = null, array $filteredEvents = null, bool $return = false)
     {
-        $message = $this->createMessage($message);
-        if (!empty($filteredEvents) && !in_array($message->getEvent(), $filteredEvents)) {
+        $event = $this->createEvent($event);
+        if (!empty($filteredEvents) && !in_array($event->getName(), $filteredEvents)) {
             throw new ProcessorException(ProcessorException::FILTERED_EVENT_ONLY . json_encode($filteredEvents));
         }
 
-        $registeredEvents = $this->eventRegister->retrieveEvent($message->getEvent());
+        $registeredEvents = $this->eventRegister->retrieveEvent($event->getName());
         if (empty($registeredEvents)) {
-            throw new ProcessorException(ProcessorException::NO_REGISTER_EVENTS . $message->getEvent());
+            throw new ProcessorException(ProcessorException::NO_REGISTER_EVENTS . $event->getName());
         }
 
         foreach ($registeredEvents as $eventName => $services) {
@@ -100,10 +100,10 @@ class Processor implements ProcessorInterface
                 }
 
                 if ($return === true) {
-                    return $this->runService($message, $service, $callbacks, $return);
+                    return $this->runService($event, $service, $callbacks, $return);
                 }
 
-                $this->runService($message, $service, $callbacks);
+                $this->runService($event, $service, $callbacks);
             }
         }
 
@@ -111,18 +111,18 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param null $message
+     * @param null $event
      * @return bool
      * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      * @throws \BrighteCapital\ServiceSchema\Main\Exception\ProcessorException
      * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
-    public function rollback($message = null)
+    public function rollback($event = null)
     {
-        $message = $this->createMessage($message);
-        $registeredEvents = $this->eventRegister->retrieveEvent($message->getEvent());
+        $event = $this->createEvent($event);
+        $registeredEvents = $this->eventRegister->retrieveEvent($event->getName());
         if (empty($registeredEvents)) {
-            throw new ProcessorException(ProcessorException::NO_REGISTER_EVENTS . $message->getEvent());
+            throw new ProcessorException(ProcessorException::NO_REGISTER_EVENTS . $event->getName());
         }
 
         foreach ($registeredEvents as $eventName => $services) {
@@ -143,7 +143,7 @@ class Processor implements ProcessorInterface
                 }
 
                 if ($service instanceof SagaInterface) {
-                    $this->rollbackService($message, $service);
+                    $this->rollbackService($event, $service);
                 }
             }
         }
@@ -153,48 +153,48 @@ class Processor implements ProcessorInterface
 
     /**
      * @param $json
-     * @return false|\BrighteCapital\ServiceSchema\Event\Message
+     * @return false|\BrighteCapital\ServiceSchema\Event\Event
      * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      * @throws \BrighteCapital\ServiceSchema\Main\Exception\ProcessorException
      */
-    public function createMessage($json = null)
+    public function createEvent($json = null)
     {
-        if ($json instanceof Message) {
+        if ($json instanceof Event) {
             return $json;
         }
 
-        $message = $this->messageFactory->createMessage($json);
-        if (empty($message)) {
-            throw new ProcessorException(ProcessorException::FAILED_TO_CREATE_MESSAGE . $json);
+        $event = $this->eventFactory->createEvent($json);
+        if (empty($event)) {
+            throw new ProcessorException(ProcessorException::FAILED_TO_CREATE_event . $json);
         }
 
-        return $message;
+        return $event;
     }
 
     /**
-     * @param \BrighteCapital\ServiceSchema\Event\MessageInterface|null $message
+     * @param \BrighteCapital\ServiceSchema\Event\EventInterface|null $event
      * @param \BrighteCapital\ServiceSchema\Service\SagaInterface|null $service
-     * @return bool|\BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @return bool|\BrighteCapital\ServiceSchema\Event\EventInterface
      * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
-    public function rollbackService(MessageInterface $message = null, SagaInterface $service = null)
+    public function rollbackService(EventInterface $event = null, SagaInterface $service = null)
     {
-        $json = JsonReader::decode($message->toJson());
+        $json = JsonReader::decode($event->toJson());
         $validator = $this->serviceValidator->validate($json, $service);
         if (!$validator->isValid()) {
             throw  new ServiceException(ServiceException::INVALIDATED_JSON_STRING . json_encode($validator->getErrors()));
         }
 
         if (isset($json->payload)) {
-            $message->setPayload($json->payload);
+            $event->setPayload($json->payload);
         }
 
-        return $service->rollback($message);
+        return $service->rollback($event);
     }
 
     /**
-     * @param \BrighteCapital\ServiceSchema\Event\MessageInterface|null $message
+     * @param \BrighteCapital\ServiceSchema\Event\EventInterface|null $event
      * @param \BrighteCapital\ServiceSchema\Service\ServiceInterface|null $service
      * @param array $callbacks
      * @param bool $return
@@ -202,24 +202,24 @@ class Processor implements ProcessorInterface
      * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
-    public function runService(MessageInterface $message = null, ServiceInterface $service = null, array $callbacks = null, bool $return = false)
+    public function runService(EventInterface $event = null, ServiceInterface $service = null, array $callbacks = null, bool $return = false)
     {
-        $json = JsonReader::decode($message->toJson());
+        $json = JsonReader::decode($event->toJson());
         $validator = $this->serviceValidator->validate($json, $service);
         if (!$validator->isValid()) {
             throw  new ServiceException(ServiceException::INVALIDATED_JSON_STRING . json_encode($validator->getErrors()));
         }
 
         if (isset($json->payload)) {
-            $message->setPayload($json->payload);
+            $event->setPayload($json->payload);
         }
 
-        $result = $service->consume($message);
+        $result = $service->consume($event);
         if ($return === true) {
             return $result;
         }
 
-        if (($result instanceof MessageInterface) && !empty($callbacks)) {
+        if (($result instanceof EventInterface) && !empty($callbacks)) {
             return $this->runCallbacks($result, $callbacks);
         }
 
@@ -227,12 +227,12 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param \BrighteCapital\ServiceSchema\Event\MessageInterface|null $event
+     * @param \BrighteCapital\ServiceSchema\Event\EventInterface|null $event
      * @param array|null $callbacks
      * @return bool
      * @throws \BrighteCapital\ServiceSchema\Service\Exception\ServiceException
      */
-    public function runCallbacks(MessageInterface $event, array $callbacks = null)
+    public function runCallbacks(EventInterface $event, array $callbacks = null)
     {
         if (empty($callbacks)) {
             return true;
@@ -289,20 +289,20 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @return \BrighteCapital\ServiceSchema\Event\MessageFactory
+     * @return \BrighteCapital\ServiceSchema\Event\EventFactory
      */
-    public function getMessageFactory()
+    public function getEventFactory()
     {
-        return $this->messageFactory;
+        return $this->eventFactory;
     }
 
     /**
-     * @param \BrighteCapital\ServiceSchema\Event\MessageFactory $messageFactory
+     * @param \BrighteCapital\ServiceSchema\Event\EventFactory $eventFactory
      * @return \BrighteCapital\ServiceSchema\Main\Processor
      */
-    public function setMessageFactory(MessageFactory $messageFactory = null)
+    public function setEventFactory(EventFactory $eventFactory = null)
     {
-        $this->messageFactory = $messageFactory;
+        $this->eventFactory = $eventFactory;
 
         return $this;
     }

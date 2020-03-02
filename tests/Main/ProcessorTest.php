@@ -29,8 +29,8 @@ class ProcessorTest extends TestCase
      */
     public function testProcess()
     {
-        $message = JsonReader::read($this->testDir . "/jsons/messages/Users.afterSaveCommit.Create.json");
-        $result = $this->processor->process($message);
+        $event = JsonReader::read($this->testDir . "/jsons/messages/Users.afterSaveCommit.Create.json");
+        $result = $this->processor->process($event);
         $this->assertTrue(is_bool($result));
     }
 
@@ -41,9 +41,9 @@ class ProcessorTest extends TestCase
      */
     public function testProcessFailed()
     {
-        $message = JsonReader::read($this->testDir . "/jsons/messages/Users.afterSaveCommit.Create.Failed.json");
+        $event = JsonReader::read($this->testDir . "/jsons/messages/Users.afterSaveCommit.Create.Failed.json");
         $this->expectException(ServiceException::class);
-        $this->processor->process($message);
+        $this->processor->process($event);
     }
 
     /**
@@ -53,8 +53,8 @@ class ProcessorTest extends TestCase
      */
     public function testRollback()
     {
-        $message = JsonReader::read($this->testDir . "/jsons/messages/Users.afterSaveCommit.Create.json");
-        $result = $this->processor->rollback($message);
+        $event = JsonReader::read($this->testDir . "/jsons/messages/Users.afterSaveCommit.Create.json");
+        $result = $this->processor->rollback($event);
         $this->assertTrue(is_bool($result));
     }
 
@@ -68,9 +68,9 @@ class ProcessorTest extends TestCase
         $this->processor->setServiceRegister($serviceRegister);
         $this->assertSame($serviceRegister, $this->processor->getServiceRegister());
 
-        $messageFactory = $this->processor->getMessageFactory();
-        $this->processor->setMessageFactory($messageFactory);
-        $this->assertSame($messageFactory, $this->processor->getMessageFactory());
+        $eventFactory = $this->processor->getEventFactory();
+        $this->processor->setEventFactory($eventFactory);
+        $this->assertSame($eventFactory, $this->processor->getEventFactory());
 
         $serviceFactory = $this->processor->getServiceFactory();
         $this->processor->setServiceFactory($serviceFactory);

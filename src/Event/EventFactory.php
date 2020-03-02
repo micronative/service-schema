@@ -5,15 +5,15 @@ namespace BrighteCapital\ServiceSchema\Event;
 use BrighteCapital\ServiceSchema\Json\Exception\JsonException;
 use BrighteCapital\ServiceSchema\Json\JsonReader;
 
-class MessageFactory
+class EventFactory
 {
 
     /**
      * @param string|null $json
-     * @return false|\BrighteCapital\ServiceSchema\Event\Message
+     * @return false|\BrighteCapital\ServiceSchema\Event\Event
      * @throws \BrighteCapital\ServiceSchema\Json\Exception\JsonException
      */
-    public function createMessage(string $json = null)
+    public function createEvent(string $json = null)
     {
         if (empty($json)) {
             throw new JsonException(JsonException::MISSING_JSON_CONTENT);
@@ -25,9 +25,9 @@ class MessageFactory
             throw new JsonException(JsonException::INVALID_JSON_CONTENT . $json);
         }
 
-        return new Message([
+        return new Event([
             'id' => isset($object->id) ? $object->id : null,
-            'event' => isset($object->event) ? $object->event : null,
+            'name' => isset($object->name) ? $object->name : null,
             'time' => isset($object->time) ? $object->time : null,
             'payload' => isset($object->payload) ? $object->payload : null,
             'source' => isset($object->source) ? $object->source : null,

@@ -62,15 +62,15 @@ services.json
     "service": "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
     "schema": "/jsons/schemas/CreateContact.json",
     "callbacks": [
-      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs",
-      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushEventToSqs",
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushEventToLog"
     ]
   },
   {
     "service": "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\UpdateContact",
     "schema": "/jsons/schemas/UpdateContact.json",
     "callbacks": [
-      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushEventToLog"
     ]
   },
   {
@@ -170,18 +170,18 @@ $message = $event->toJson();
 <pre>
 namespace BrighteCapital\ServiceSchema\Tests\Service\Samples;
 
-use BrighteCapital\ServiceSchema\Event\Message;
-use BrighteCapital\ServiceSchema\Event\MessageInterface;
+use BrighteCapital\ServiceSchema\Event\Event;
+use BrighteCapital\ServiceSchema\Event\EventInterface;
 use BrighteCapital\ServiceSchema\Service\Service;
 use BrighteCapital\ServiceSchema\Service\ServiceInterface;
 
 class CreateContact extends Service implements ServiceInterface
 {
-    public function consume(MessageInterface $event = null)
+    public function consume(EventInterface $event = null)
     {
         echo "CreateContact";
 
-        return new Message();
+        return new Event();
     }
 }
 
@@ -200,8 +200,8 @@ $result = $processor->process($message);
  * "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact", "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
  * When $processor->process(message): CreateContact->run(Event) and CreateTask->run(Event) will be executed.
  * Service CreateContact has 02 callback services (configured in services.json): 
- * "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs","BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
- * When CreateContact->run(Event) returns an Event then PushMessageToSqs->run(Event) and PushMessageToLog->run(Event) will be executed
+ * "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushEventToSqs","BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushEventToLog"
+ * When CreateContact->run(Event) returns an Event then PushEventToSqs->run(Event) and PushEventToLog->run(Event) will be executed
  */
 </pre>
 

@@ -4,14 +4,14 @@ namespace BrighteCapital\ServiceSchema\Event;
 
 use BrighteCapital\ServiceSchema\Json\JsonReader;
 
-class Message implements MessageInterface
+class Event implements EventInterface
 {
 
     /** @var string */
     protected $id;
 
     /** @var string */
-    protected $event;
+    protected $name;
 
     /** @var string */
     protected $time;
@@ -35,14 +35,14 @@ class Message implements MessageInterface
     protected $attributes;
 
     /**
-     * Message constructor.
+     * Event constructor.
      *
      * @param array|null $data
      */
     public function __construct(array $data = null)
     {
         $this->id = isset($data['id']) ? $data['id'] : null;
-        $this->event = isset($data['event']) ? $data['event'] : null;
+        $this->name = isset($data['name']) ? $data['name'] : null;
         $this->time = isset($data['time']) ? $data['time'] : date("Y-m-d H:i:s");
         $this->payload = isset($data['payload']) ? $data['payload'] : null;
         $this->source = isset($data['source']) ? $data['source'] : null;
@@ -60,7 +60,7 @@ class Message implements MessageInterface
     {
         return JsonReader::encode([
             "id" => $this->id,
-            "event" => $this->event,
+            "name" => $this->name,
             "time" => $this->time,
             "payload" => $this->payload,
             "source" => $this->source,
@@ -81,7 +81,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $id
-     * @return \BrighteCapital\ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Event
      */
     public function setId(string $id = null)
     {
@@ -93,18 +93,18 @@ class Message implements MessageInterface
     /**
      * @return string|null
      */
-    public function getEvent()
+    public function getName()
     {
-        return $this->event;
+        return $this->name;
     }
 
     /**
-     * @param string|null $event
-     * @return \BrighteCapital\ServiceSchema\Event\Message
+     * @param string|null $name
+     * @return \BrighteCapital\ServiceSchema\Event\Event
      */
-    public function setEvent(string $event = null)
+    public function setName(string $name = null)
     {
-        $this->event = $event;
+        $this->name = $name;
 
         return $this;
     }
@@ -119,7 +119,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $time
-     * @return \BrighteCapital\ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Event
      */
     public function setTime(string $time = null)
     {
@@ -138,7 +138,7 @@ class Message implements MessageInterface
 
     /**
      * @param array|\stdClass|null $payload
-     * @return \BrighteCapital\ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Event
      */
     public function setPayload($payload = null)
     {
@@ -157,7 +157,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $status
-     * @return \BrighteCapital\ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Event
      */
     public function setStatus(string $status = null)
     {
@@ -176,7 +176,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $description
-     * @return \BrighteCapital\ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Event
      */
     public function setDescription(string $description = null)
     {
@@ -195,7 +195,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $source
-     * @return \BrighteCapital\ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Event
      */
     public function setSource(string $source = null)
     {
@@ -214,7 +214,7 @@ class Message implements MessageInterface
 
     /**
      * @param string|null $sagaId
-     * @return \BrighteCapital\ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Event
      */
     public function setSagaId(string $sagaId = null)
     {
@@ -233,7 +233,7 @@ class Message implements MessageInterface
 
     /**
      * @param array|\stdClass|null $attributes
-     * @return \BrighteCapital\ServiceSchema\Event\Message
+     * @return \BrighteCapital\ServiceSchema\Event\Event
      */
     public function setAttributes($attributes = null)
     {

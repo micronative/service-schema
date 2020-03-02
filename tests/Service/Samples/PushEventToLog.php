@@ -2,13 +2,13 @@
 
 namespace BrighteCapital\ServiceSchema\Tests\Service\Samples;
 
-use BrighteCapital\ServiceSchema\Event\MessageInterface;
+use BrighteCapital\ServiceSchema\Event\EventInterface;
 use BrighteCapital\ServiceSchema\Service\Service;
 use BrighteCapital\ServiceSchema\Service\ServiceInterface;
 
-class PushMessageToLog extends Service implements ServiceInterface
+class PushEventToLog extends Service implements ServiceInterface
 {
-    public function consume(MessageInterface $message = null)
+    public function consume(EventInterface $event = null)
     {
         echo "Push message to Log";
 

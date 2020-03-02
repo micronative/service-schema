@@ -3,15 +3,15 @@
     "service": "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
     "schema": "/jsons/schemas/CreateContact.json",
     "callbacks": [
-      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs",
-      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushEventToSqs",
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushEventToLog"
     ]
   },
   {
     "service": "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\UpdateContact",
     "schema": "/jsons/schemas/UpdateContact.json",
     "callbacks": [
-      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
+      "BrighteCapital\\ServiceSchema\\Tests\\Service\\Samples\\PushEventToLog"
     ]
   },
   {

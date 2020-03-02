@@ -2,7 +2,7 @@
 
 namespace BrighteCapital\ServiceSchema\Event;
 
-interface MessageInterface
+interface EventInterface
 {
 
     /**
@@ -17,20 +17,20 @@ interface MessageInterface
 
     /**
      * @param string|null $id
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface
      */
     public function setId(string $id = null);
 
     /**
      * @return string|null
      */
-    public function getEvent();
+    public function getName();
 
     /**
-     * @param string|null $event
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @param string|null $name
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface
      */
-    public function setEvent(string $event = null);
+    public function setName(string $name = null);
 
     /**
      * @return string|null
@@ -39,7 +39,7 @@ interface MessageInterface
 
     /**
      * @param string|null $time
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface
      */
     public function setTime(string $time = null);
 
@@ -50,7 +50,7 @@ interface MessageInterface
 
     /**
      * @param array|\stdClass|null $payload
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface
      */
     public function setPayload($payload = null);
 
@@ -61,7 +61,7 @@ interface MessageInterface
 
     /**
      * @param string|null $status
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface
      */
     public function setStatus(string $status = null);
 
@@ -72,7 +72,7 @@ interface MessageInterface
 
     /**
      * @param string|null $description
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface
      */
     public function setDescription(string $description = null);
 
@@ -83,7 +83,7 @@ interface MessageInterface
 
     /**
      * @param string|null $source
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface
      */
     public function setSource(string $source = null);
 
@@ -94,7 +94,7 @@ interface MessageInterface
 
     /**
      * @param string|null $sagaId
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface
      */
     public function setSagaId(string $sagaId = null);
 
@@ -105,7 +105,7 @@ interface MessageInterface
 
     /**
      * @param array|\stdClass|null $extra
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface
      */
     public function setAttributes($extra = null);
 
@@ -118,7 +118,7 @@ interface MessageInterface
     /**
      * @param string $key
      * @param string|array|null $value
-     * @return \BrighteCapital\ServiceSchema\Event\MessageInterface
+     * @return \BrighteCapital\ServiceSchema\Event\EventInterface
      */
     public function setAttribute(string $key, $value = null);
 }
