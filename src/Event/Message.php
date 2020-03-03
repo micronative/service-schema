@@ -11,13 +11,13 @@ class Message implements MessageInterface
     protected $id;
 
     /** @var string */
-    protected $event;
+    public $event;
 
     /** @var string */
-    protected $time;
+    public $time;
 
     /** @var array|null|\stdClass */
-    protected $payload;
+    public $payload;
 
     /** @var string */
     protected $source;

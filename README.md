@@ -156,15 +156,14 @@ In this CreateContact.json:
 - "account" requires "data"
 
 ### Event
-<pre>
-$event = new Event();
-$event->setName("Users.afterSaveCommit.Create");
-$event->setTime("20190730123000");
-$event->setPayload(["user" => ["data" => ["name" => "Ken"]], "account" => ["data" => ["name" => "Brighte"]]]);
+```php
+$producer = new Producer("eventsSchemaDir", new Validator());
+$payload = new \stdClass(["user" => ["data" => ["name" => "Ken"]], "account" => ["data" => ["name" => "Brighte"]]]);
+$event = $producer->produce("Users.afterSaveCommit.Create", $payload);
 $message = $event->toJson();
 // '{"name":"Users.afterSaveCommit.Create","time":"20190730123000","payload":{"user":{"data":{"name":"Ken"}},"account":{"data":{"name":"Brighte"}}}}'
 // this message is used to push to SQS or other services
-</pre>
+```
 
 ### Service
 <pre>
