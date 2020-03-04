@@ -53,4 +53,16 @@ class ServiceFactory
             return new $serviceClass($this->container);
         }
     }
+
+    public function getContainer(): ?ContainerInterface
+    {
+        return $this->container;
+    }
+
+    public function setContainer(?ContainerInterface $container): self
+    {
+        $this->container = $container;
+
+        return $this;
+    }
 }

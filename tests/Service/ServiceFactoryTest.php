@@ -24,6 +24,13 @@ class ServiceFactoryTest extends TestCase
 
     }
 
+    public function testContainerSettersAndGetters()
+    {
+        $container = $this->createMock(ContainerInterface::class);
+        $this->serviceFactory->setContainer($container);
+        $this->assertEquals($container, $this->serviceFactory->getContainer());
+    }
+
     /**
      * @covers \ServiceSchema\Service\ServiceFactory::createService
      * @throws \ServiceSchema\Service\Exception\ServiceException
