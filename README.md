@@ -38,14 +38,14 @@ events.json
   {
     "event": "Users.afterSaveCommit.Create",
     "services": [
-      "ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
-      "ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
+      "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
+      "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
     ]
   },
   {
     "event": "Users.afterSaveCommit.Update",
     "services": [
-      "ServiceSchema\\Tests\\Service\\Samples\\UpdateContact"
+      "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\UpdateContact"
     ]
   }
 ]
@@ -59,22 +59,22 @@ services.json
 <pre>
 [
   {
-    "service": "ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
+    "service": "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
     "schema": "/jsons/schemas/CreateContact.json",
     "callbacks": [
-      "ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs",
-      "ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
+      "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs",
+      "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
     ]
   },
   {
-    "service": "ServiceSchema\\Tests\\Service\\Samples\\UpdateContact",
+    "service": "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\UpdateContact",
     "schema": "/jsons/schemas/UpdateContact.json",
     "callbacks": [
-      "ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
+      "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
     ]
   },
   {
-    "service": "ServiceSchema\\Tests\\Service\\Samples\\CreateTask",
+    "service": "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateTask",
     "schema": "/jsons/schemas/CreateTask.json"
   }
 ]
@@ -168,12 +168,12 @@ $message = $event->toJson();
 
 ### Service
 <pre>
-namespace ServiceSchema\Tests\Service\Samples;
+namespace Micronative\ServiceSchema\Tests\Service\Samples;
 
-use ServiceSchema\Event\Message;
-use ServiceSchema\Event\MessageInterface;
-use ServiceSchema\Service\Service;
-use ServiceSchema\Service\ServiceInterface;
+use Micronative\ServiceSchema\Event\Message;
+use Micronative\ServiceSchema\Event\MessageInterface;
+use Micronative\ServiceSchema\Service\Service;
+use Micronative\ServiceSchema\Service\ServiceInterface;
 
 class CreateContact extends Service implements ServiceInterface
 {
@@ -197,10 +197,10 @@ $processor = new Processor(["events.json"], ["services.json"], "serviceSchemaDir
 $result = $processor->process($message);
 /*
  * In this example, event "Users.afterSaveCommit.Create" has 02 services listening to it (configued in events.json)
- * "ServiceSchema\\Tests\\Service\\Samples\\CreateContact", "ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
+ * "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact", "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
  * When $processor->process(message): CreateContact->run(Event) and CreateTask->run(Event) will be executed.
  * Service CreateContact has 02 callback services (configured in services.json): 
- * "ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs","ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
+ * "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs","Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
  * When CreateContact->run(Event) returns an Event then PushMessageToSqs->run(Event) and PushMessageToLog->run(Event) will be executed
  */
 </pre>
