@@ -27,7 +27,7 @@ in order to reuse services and schemas in different events through configuration
 ## Configuration
 <pre>
 "require": {
-        "micronative/service-schema": "^1.0.0"
+        "micronative/service-schema": "^1.5.0"
     }
 </pre>
 ## Sample code
