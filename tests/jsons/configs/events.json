@@ -2,14 +2,14 @@
   {
     "event": "Users.afterSaveCommit.Create",
     "services": [
-      "ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
-      "ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
+      "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
+      "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
     ]
   },
   {
     "event": "Users.afterSaveCommit.Update",
     "services": [
-      "ServiceSchema\\Tests\\Service\\Samples\\UpdateContact"
+      "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\UpdateContact"
     ]
   }
 ]

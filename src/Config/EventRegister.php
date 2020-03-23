@@ -2,7 +2,6 @@
 
 namespace Micronative\ServiceSchema\Config;
 
-
 use Micronative\ServiceSchema\Json\JsonReader;
 
 class EventRegister
@@ -20,7 +19,6 @@ class EventRegister
      * EventRegister constructor.
      *
      * @param array|null $configs
-     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function __construct(array $configs = null)
     {
