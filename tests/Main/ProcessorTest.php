@@ -1,12 +1,11 @@
 <?php
 
-namespace ServiceSchema\Tests\Main;
+namespace Micronative\ServiceSchema\Tests\Main;
 
+use Micronative\ServiceSchema\Json\JsonReader;
+use Micronative\ServiceSchema\Main\Processor;
+use Micronative\ServiceSchema\Service\Exception\ServiceException;
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Json\JsonReader;
-use ServiceSchema\Main\Processor;
-use ServiceSchema\Service\Exception\ServiceException;
-use ServiceSchema\Service\SagaInterface;
 
 class ProcessorTest extends TestCase
 {
@@ -23,9 +22,7 @@ class ProcessorTest extends TestCase
     }
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Main\Exception\ProcessorException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testProcess()
     {
@@ -35,9 +32,7 @@ class ProcessorTest extends TestCase
     }
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Main\Exception\ProcessorException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testProcessFailed()
     {
@@ -47,9 +42,7 @@ class ProcessorTest extends TestCase
     }
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Main\Exception\ProcessorException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testRollback()
     {

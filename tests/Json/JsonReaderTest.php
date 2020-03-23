@@ -1,10 +1,10 @@
 <?php
 
-namespace ServiceSchema\Tests\Json;
+namespace Micronative\ServiceSchema\Tests\Json;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Json\Exception\JsonException;
-use ServiceSchema\Json\JsonReader;
+use Micronative\ServiceSchema\Json\Exception\JsonException;
+use Micronative\ServiceSchema\Json\JsonReader;
 
 class JsonReaderTest extends TestCase
 {

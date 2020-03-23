@@ -1,11 +1,11 @@
 <?php
 
-namespace ServiceSchema\Tests\Json;
+namespace Micronative\ServiceSchema\Tests\Json;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Json\JsonReader;
-use ServiceSchema\Json\SchemaExporter;
-use ServiceSchema\Main\Processor;
+use Micronative\ServiceSchema\Json\JsonReader;
+use Micronative\ServiceSchema\Json\SchemaExporter;
+use Micronative\ServiceSchema\Main\Processor;
 
 class SchemaExporterTest extends TestCase
 {
