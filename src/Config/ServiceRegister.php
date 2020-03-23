@@ -1,8 +1,8 @@
 <?php
 
-namespace ServiceSchema\Config;
+namespace Micronative\ServiceSchema\Config;
 
-use ServiceSchema\Json\JsonReader;
+use Micronative\ServiceSchema\Json\JsonReader;
 
 class ServiceRegister
 {
@@ -20,7 +20,7 @@ class ServiceRegister
      * ServiceRegister constructor.
      *
      * @param array|null $configs
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function __construct(array $configs = null)
     {
@@ -28,8 +28,8 @@ class ServiceRegister
     }
 
     /**
-     * @return \ServiceSchema\Config\ServiceRegister
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @return \Micronative\ServiceSchema\Config\ServiceRegister
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function loadServices()
     {
@@ -52,7 +52,7 @@ class ServiceRegister
      * @param string|null $serviceName
      * @param string|null $schema
      * @param array|null $callbacks
-     * @return \ServiceSchema\Config\ServiceRegister
+     * @return \Micronative\ServiceSchema\Config\ServiceRegister
      */
     public function registerService(string $serviceName = null, string $schema = null, array $callbacks = null)
     {
@@ -86,7 +86,7 @@ class ServiceRegister
 
     /**
      * @param array $configs
-     * @return \ServiceSchema\Config\ServiceRegister
+     * @return \Micronative\ServiceSchema\Config\ServiceRegister
      */
     public function setConfigs(array $configs = null)
     {
@@ -105,7 +105,7 @@ class ServiceRegister
 
     /**
      * @param array $services
-     * @return \ServiceSchema\Config\ServiceRegister
+     * @return \Micronative\ServiceSchema\Config\ServiceRegister
      */
     public function setServices(array $services = null)
     {

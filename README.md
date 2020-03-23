@@ -7,15 +7,15 @@
 
 
 [ico-license]: https://img.shields.io/github/license/nrk/predis.svg?style=flat-square
-[ico-version-stable]: https://img.shields.io/packagist/v/brightecapital/service-schema.svg
-[ico-downloads-monthly]: https://img.shields.io/packagist/dm/brightecapital/service-schema.svg
-[ico-travis]: https://travis-ci.com/brighte-capital/service-schema.svg?branch=master
-[ico-codecov]: https://codecov.io/gh/brighte-capital/service-schema/branch/master/graph/badge.svg
+[ico-version-stable]: https://img.shields.io/packagist/v/micronative/service-schema.svg
+[ico-downloads-monthly]: https://img.shields.io/packagist/dm/micronative/service-schema.svg
+[ico-travis]: https://travis-ci.org/micronative/service-schema.svg?branch=master
+[ico-codecov]: https://codecov.io/gh/micronative/service-schema/branch/master/graph/badge.svg
 
-[link-packagist]: https://packagist.org/packages/brightecapital/service-schema
-[link-codecov]: https://codecov.io/gh/brighte-capital/service-schema
-[link-travis]: https://travis-ci.com/brighte-capital/service-schema
-[link-downloads]: https://packagist.org/packages/brightecapital/service-schema/stats
+[link-packagist]: https://packagist.org/packages/micronative/service-schema
+[link-codecov]: https://codecov.io/gh/micronative/service-schema
+[link-travis]: https://travis-ci.org/github/micronative/service-schema
+[link-downloads]: https://packagist.org/packages/micronative/service-schema/stats
 
 Service-schema was created as a tool to process messages from broker or between microservices, implementing event sourcing and Saga pattern.
 Based on the concept of "event schema first", service-schema improves things a step further by introducing  schema for each service 
@@ -27,7 +27,7 @@ in order to reuse services and schemas in different events through configuration
 ## Configuration
 <pre>
 "require": {
-        "brightecapital/service-schema": "^1.0.0"
+        "micronative/service-schema": "^1.0.0"
     }
 </pre>
 ## Sample code

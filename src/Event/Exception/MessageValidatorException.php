@@ -1,8 +1,8 @@
 <?php
 
-namespace ServiceSchema\Event\Exception;
+namespace Micronative\ServiceSchema\Event\Exception;
 
-use ServiceSchema\Exception\ServiceSchemaException;
+use Micronative\ServiceSchema\Exception\ServiceSchemaException;
 
 class MessageValidatorException extends ServiceSchemaException
 {

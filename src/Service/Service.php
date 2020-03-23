@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ServiceSchema\Service;
+namespace Micronative\ServiceSchema\Service;
 
 
 class Service

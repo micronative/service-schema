@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ServiceSchema\Json;
+namespace Micronative\ServiceSchema\Json;
 
 
 interface JsonReaderInterface

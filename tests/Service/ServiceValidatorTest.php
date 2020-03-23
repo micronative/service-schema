@@ -1,11 +1,11 @@
 <?php
 
-namespace ServiceSchema\Tests\Service;
+namespace Micronative\ServiceSchema\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Json\JsonReader;
-use ServiceSchema\Service\ServiceValidator;
-use ServiceSchema\Tests\Service\Samples\CreateContact;
+use Micronative\ServiceSchema\Json\JsonReader;
+use Micronative\ServiceSchema\Service\ServiceValidator;
+use Micronative\ServiceSchema\Tests\Service\Samples\CreateContact;
 
 class ServiceValidatorTest extends TestCase
 {
@@ -21,13 +21,13 @@ class ServiceValidatorTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Service\ServiceValidator::validate
-     * @covers \ServiceSchema\Service\ServiceValidator::getValidator
-     * @covers \ServiceSchema\Service\ServiceValidator::setValidator
-     * @covers \ServiceSchema\Service\ServiceValidator::getSchemaDir
-     * @covers \ServiceSchema\Service\ServiceValidator::setSchemaDir
-     * @throws \ServiceSchema\Json\Exception\JsonException
-     * @throws \ServiceSchema\Service\Exception\ServiceException
+     * @covers \Micronative\ServiceSchema\Service\ServiceValidator::validate
+     * @covers \Micronative\ServiceSchema\Service\ServiceValidator::getValidator
+     * @covers \Micronative\ServiceSchema\Service\ServiceValidator::setValidator
+     * @covers \Micronative\ServiceSchema\Service\ServiceValidator::getSchemaDir
+     * @covers \Micronative\ServiceSchema\Service\ServiceValidator::setSchemaDir
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Service\Exception\ServiceException
      */
     public function testValidate()
     {

@@ -1,9 +1,9 @@
 <?php
 
-namespace ServiceSchema\Json;
+namespace Micronative\ServiceSchema\Json;
 
-use ServiceSchema\Config\ServiceRegister;
-use ServiceSchema\Main\Processor;
+use Micronative\ServiceSchema\Config\ServiceRegister;
+use Micronative\ServiceSchema\Main\Processor;
 
 class SchemaExporter
 {
@@ -18,7 +18,7 @@ class SchemaExporter
     /**
      * SchemaReader constructor.
      *
-     * @param \ServiceSchema\Main\Processor|null $processor
+     * @param \Micronative\ServiceSchema\Main\Processor|null $processor
      */
     public function __construct(Processor $processor = null)
     {
@@ -28,7 +28,7 @@ class SchemaExporter
     /**
      * @param int $returnType
      * @return array|string
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function export(int $returnType = self::RETURN_ARRAY)
     {
@@ -57,7 +57,7 @@ class SchemaExporter
     /**
      * @param string $dir
      * @return array|false|string
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public static function exportEventSchema(string $dir)
     {

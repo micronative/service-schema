@@ -1,11 +1,11 @@
 <?php
 
-namespace ServiceSchema\Service;
+namespace Micronative\ServiceSchema\Service;
 
 use JsonSchema\Constraints\Constraint;
 use JsonSchema\Validator;
-use ServiceSchema\Json\JsonReader;
-use ServiceSchema\Service\Exception\ServiceException;
+use Micronative\ServiceSchema\Json\JsonReader;
+use Micronative\ServiceSchema\Service\Exception\ServiceException;
 
 class ServiceValidator
 {
@@ -29,10 +29,10 @@ class ServiceValidator
 
     /**
      * @param \stdClass $jsonObject
-     * @param \ServiceSchema\Service\ServiceInterface $service
+     * @param \Micronative\ServiceSchema\Service\ServiceInterface $service
      * @return \JsonSchema\Validator
-     * @throws \ServiceSchema\Service\Exception\ServiceException
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Service\Exception\ServiceException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function validate(\stdClass &$jsonObject = null, ServiceInterface $service = null)
     {
@@ -61,7 +61,7 @@ class ServiceValidator
 
     /**
      * @param \JsonSchema\Validator $validator
-     * @return \ServiceSchema\Service\ServiceValidator
+     * @return \Micronative\ServiceSchema\Service\ServiceValidator
      */
     public function setValidator(Validator $validator = null): ServiceValidator
     {
@@ -80,7 +80,7 @@ class ServiceValidator
 
     /**
      * @param string $schemaDir
-     * @return \ServiceSchema\Service\ServiceValidator
+     * @return \Micronative\ServiceSchema\Service\ServiceValidator
      */
     public function setSchemaDir(?string $schemaDir = null): ServiceValidator
     {

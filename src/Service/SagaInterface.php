@@ -1,15 +1,15 @@
 <?php
 
-namespace ServiceSchema\Service;
+namespace Micronative\ServiceSchema\Service;
 
-use ServiceSchema\Event\MessageInterface;
+use Micronative\ServiceSchema\Event\MessageInterface;
 
 interface SagaInterface
 {
 
     /**
-     * @param \ServiceSchema\Event\MessageInterface $message
-     * @return \ServiceSchema\Event\MessageInterface|bool
+     * @param \Micronative\ServiceSchema\Event\MessageInterface $message
+     * @return \Micronative\ServiceSchema\Event\MessageInterface|bool
      */
     public function rollback(MessageInterface $message = null);
 

@@ -1,20 +1,20 @@
 <?php
 
-namespace ServiceSchema\Event;
+namespace Micronative\ServiceSchema\Event;
 
 use JsonSchema\Constraints\Constraint;
 use JsonSchema\Validator;
-use ServiceSchema\Event\Exception\MessageValidatorException;
-use ServiceSchema\Json\JsonReader;
+use Micronative\ServiceSchema\Event\Exception\MessageValidatorException;
+use Micronative\ServiceSchema\Json\JsonReader;
 
 class MessageValidator
 {
     /**
-     * @param \ServiceSchema\Event\MessageInterface|null $message
+     * @param \Micronative\ServiceSchema\Event\MessageInterface|null $message
      * @param string|null $eventSchema
      * @return bool
-     * @throws \ServiceSchema\Event\Exception\MessageValidatorException
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Event\Exception\MessageValidatorException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public static function validate(MessageInterface $message = null, ?string $eventSchema = null)
     {

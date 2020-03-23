@@ -1,11 +1,11 @@
 <?php
 
-namespace ServiceSchema\Tests\Service\Samples;
+namespace Micronative\ServiceSchema\Tests\Service\Samples;
 
-use ServiceSchema\Event\Message;
-use ServiceSchema\Event\MessageInterface;
-use ServiceSchema\Service\Service;
-use ServiceSchema\Service\ServiceInterface;
+use Micronative\ServiceSchema\Event\Message;
+use Micronative\ServiceSchema\Event\MessageInterface;
+use Micronative\ServiceSchema\Service\Service;
+use Micronative\ServiceSchema\Service\ServiceInterface;
 
 class CreateContact extends Service implements ServiceInterface
 {

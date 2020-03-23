@@ -1,17 +1,18 @@
 {
-  "name": "brightecapital/service-schema",
-  "description": "Service Schema for Microservice",
+  "name": "micronative/service-schema",
+  "description": "Event Schema and Service Schema for Microservice",
   "keywords": [
     "Microservice",
+    "Event",
     "Service",
     "Schema"
   ],
-  "homepage": "https://github.com/brightecapital/",
+  "homepage": "https://github.com/micronative/",
   "license": "MIT",
   "authors": [
     {
       "name": "Ken Ngo",
-      "email": "ken.ngo@brighte.com.au"
+      "email": "ngodinhloc@gmail.com"
     }
   ],
   "require": {
@@ -25,12 +26,12 @@
   },
   "autoload": {
     "psr-4": {
-      "ServiceSchema\\": "src/"
+      "Micronative\\ServiceSchema\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ServiceSchema\\Tests\\": "tests/"
+      "Micronative\\ServiceSchema\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "dev"

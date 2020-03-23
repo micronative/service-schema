@@ -1,10 +1,10 @@
 <?php
 
-namespace ServiceSchema\Tests\Event;
+namespace Micronative\ServiceSchema\Tests\Event;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Event\Message;
-use ServiceSchema\Event\MessageFactory;
+use Micronative\ServiceSchema\Event\Message;
+use Micronative\ServiceSchema\Event\MessageFactory;
 
 class MessageFactoryTest extends TestCase
 {
@@ -17,12 +17,12 @@ class MessageFactoryTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Event\MessageFactory::createMessage
-     * @covers \ServiceSchema\Event\MessageFactory::validate
-     * @covers \ServiceSchema\Event\Message::getEvent
-     * @covers \ServiceSchema\Event\Message::getTime
-     * @covers \ServiceSchema\Event\Message::getPayload
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Event\MessageFactory::createMessage
+     * @covers \Micronative\ServiceSchema\Event\MessageFactory::validate
+     * @covers \Micronative\ServiceSchema\Event\Message::getEvent
+     * @covers \Micronative\ServiceSchema\Event\Message::getTime
+     * @covers \Micronative\ServiceSchema\Event\Message::getPayload
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testCreateEvent()
     {

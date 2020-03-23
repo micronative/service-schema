@@ -1,9 +1,9 @@
 <?php
 
-namespace ServiceSchema\Tests\Config;
+namespace Micronative\ServiceSchema\Tests\Config;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Config\EventRegister;
+use Micronative\ServiceSchema\Config\EventRegister;
 
 class EventRegisterTest extends TestCase
 {
@@ -13,7 +13,7 @@ class EventRegisterTest extends TestCase
     protected $eventRegister;
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function setUp()
     {
@@ -23,8 +23,8 @@ class EventRegisterTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Config\EventRegister::loadEvents
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Config\EventRegister::loadEvents
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testLoadEvents()
     {
@@ -36,8 +36,8 @@ class EventRegisterTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Config\EventRegister::registerEvent
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Config\EventRegister::registerEvent
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testRegisterEvent()
     {
@@ -50,8 +50,8 @@ class EventRegisterTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Config\EventRegister::retrieveEvent
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Config\EventRegister::retrieveEvent
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testRetrieveEvent()
     {
@@ -64,11 +64,11 @@ class EventRegisterTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Config\EventRegister::getConfigs
-     * @covers \ServiceSchema\Config\EventRegister::setConfigs
-     * @covers \ServiceSchema\Config\EventRegister::getEvents
-     * @covers \ServiceSchema\Config\EventRegister::setEvents
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Config\EventRegister::getConfigs
+     * @covers \Micronative\ServiceSchema\Config\EventRegister::setConfigs
+     * @covers \Micronative\ServiceSchema\Config\EventRegister::getEvents
+     * @covers \Micronative\ServiceSchema\Config\EventRegister::setEvents
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testGetterAndSetters()
     {

@@ -1,9 +1,9 @@
 <?php
 
-namespace ServiceSchema\Tests\Config;
+namespace Micronative\ServiceSchema\Tests\Config;
 
 use PHPUnit\Framework\TestCase;
-use ServiceSchema\Config\ServiceRegister;
+use Micronative\ServiceSchema\Config\ServiceRegister;
 
 class ServiceRegisterTest extends TestCase
 {
@@ -13,7 +13,7 @@ class ServiceRegisterTest extends TestCase
     protected $serviceRegister;
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function setUp()
     {
@@ -23,21 +23,21 @@ class ServiceRegisterTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Config\ServiceRegister::loadServices
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Config\ServiceRegister::loadServices
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testLoadServices()
     {
         $this->serviceRegister->loadServices();
         $services = $this->serviceRegister->getServices();
         $this->assertTrue(is_array($services));
-        $this->assertTrue(isset($services["ServiceSchema\Tests\Service\Samples\CreateContact"]));
-        $this->assertTrue(isset($services["ServiceSchema\Tests\Service\Samples\UpdateContact"]));
+        $this->assertTrue(isset($services["Micronative\ServiceSchema\Tests\Service\Samples\CreateContact"]));
+        $this->assertTrue(isset($services["Micronative\ServiceSchema\Tests\Service\Samples\UpdateContact"]));
     }
 
     /**
-     * @covers \ServiceSchema\Config\ServiceRegister::registerService
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Config\ServiceRegister::registerService
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testRegisterService()
     {
@@ -50,8 +50,8 @@ class ServiceRegisterTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Config\ServiceRegister::retrieveService
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Config\ServiceRegister::retrieveService
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testRetrieveEvent()
     {

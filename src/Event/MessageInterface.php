@@ -1,6 +1,6 @@
 <?php
 
-namespace ServiceSchema\Event;
+namespace Micronative\ServiceSchema\Event;
 
 interface MessageInterface
 {
@@ -17,7 +17,7 @@ interface MessageInterface
 
     /**
      * @param string|null $id
-     * @return \ServiceSchema\Event\MessageInterface
+     * @return \Micronative\ServiceSchema\Event\MessageInterface
      */
     public function setId(string $id = null);
 
@@ -28,7 +28,7 @@ interface MessageInterface
 
     /**
      * @param string|null $event
-     * @return \ServiceSchema\Event\MessageInterface
+     * @return \Micronative\ServiceSchema\Event\MessageInterface
      */
     public function setEvent(string $event = null);
 
@@ -39,7 +39,7 @@ interface MessageInterface
 
     /**
      * @param string|null $time
-     * @return \ServiceSchema\Event\MessageInterface
+     * @return \Micronative\ServiceSchema\Event\MessageInterface
      */
     public function setTime(string $time = null);
 
@@ -50,7 +50,7 @@ interface MessageInterface
 
     /**
      * @param array|\stdClass|null $payload
-     * @return \ServiceSchema\Event\MessageInterface
+     * @return \Micronative\ServiceSchema\Event\MessageInterface
      */
     public function setPayload($payload = null);
 
@@ -61,7 +61,7 @@ interface MessageInterface
 
     /**
      * @param string|null $status
-     * @return \ServiceSchema\Event\MessageInterface
+     * @return \Micronative\ServiceSchema\Event\MessageInterface
      */
     public function setStatus(string $status = null);
 
@@ -72,7 +72,7 @@ interface MessageInterface
 
     /**
      * @param string|null $description
-     * @return \ServiceSchema\Event\MessageInterface
+     * @return \Micronative\ServiceSchema\Event\MessageInterface
      */
     public function setDescription(string $description = null);
 
@@ -83,7 +83,7 @@ interface MessageInterface
 
     /**
      * @param string|null $source
-     * @return \ServiceSchema\Event\MessageInterface
+     * @return \Micronative\ServiceSchema\Event\MessageInterface
      */
     public function setSource(string $source = null);
 
@@ -94,7 +94,7 @@ interface MessageInterface
 
     /**
      * @param string|null $sagaId
-     * @return \ServiceSchema\Event\MessageInterface
+     * @return \Micronative\ServiceSchema\Event\MessageInterface
      */
     public function setSagaId(string $sagaId = null);
 
@@ -105,7 +105,7 @@ interface MessageInterface
 
     /**
      * @param array|\stdClass|null $extra
-     * @return \ServiceSchema\Event\MessageInterface
+     * @return \Micronative\ServiceSchema\Event\MessageInterface
      */
     public function setAttributes($extra = null);
 
@@ -118,7 +118,7 @@ interface MessageInterface
     /**
      * @param string $key
      * @param string|array|null $value
-     * @return \ServiceSchema\Event\MessageInterface
+     * @return \Micronative\ServiceSchema\Event\MessageInterface
      */
     public function setAttribute(string $key, $value = null);
 }

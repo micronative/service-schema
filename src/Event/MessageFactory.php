@@ -1,17 +1,17 @@
 <?php
 
-namespace ServiceSchema\Event;
+namespace Micronative\ServiceSchema\Event;
 
-use ServiceSchema\Json\Exception\JsonException;
-use ServiceSchema\Json\JsonReader;
+use Micronative\ServiceSchema\Json\Exception\JsonException;
+use Micronative\ServiceSchema\Json\JsonReader;
 
 class MessageFactory
 {
 
     /**
      * @param string|null $json
-     * @return false|\ServiceSchema\Event\Message
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @return false|\Micronative\ServiceSchema\Event\Message
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function createMessage(string $json = null)
     {

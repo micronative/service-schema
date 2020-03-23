@@ -1,8 +1,8 @@
 <?php
 
-namespace ServiceSchema\Json\Exception;
+namespace Micronative\ServiceSchema\Json\Exception;
 
-use ServiceSchema\Exception\ServiceSchemaException;
+use Micronative\ServiceSchema\Exception\ServiceSchemaException;
 
 class SchemaExporterException extends ServiceSchemaException
 {

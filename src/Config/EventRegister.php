@@ -1,9 +1,9 @@
 <?php
 
-namespace ServiceSchema\Config;
+namespace Micronative\ServiceSchema\Config;
 
 
-use ServiceSchema\Json\JsonReader;
+use Micronative\ServiceSchema\Json\JsonReader;
 
 class EventRegister
 {
@@ -20,7 +20,7 @@ class EventRegister
      * EventRegister constructor.
      *
      * @param array|null $configs
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function __construct(array $configs = null)
     {
@@ -28,8 +28,8 @@ class EventRegister
     }
 
     /**
-     * @return \ServiceSchema\Config\EventRegister
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @return \Micronative\ServiceSchema\Config\EventRegister
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function loadEvents()
     {
@@ -52,7 +52,7 @@ class EventRegister
     /**
      * @param string|null $eventName
      * @param array|null $services
-     * @return \ServiceSchema\Config\EventRegister
+     * @return \Micronative\ServiceSchema\Config\EventRegister
      */
     public function registerEvent(string $eventName = null, array $services = null)
     {
@@ -88,7 +88,7 @@ class EventRegister
 
     /**
      * @param array $configs
-     * @return \ServiceSchema\Config\EventRegister
+     * @return \Micronative\ServiceSchema\Config\EventRegister
      */
     public function setConfigs(array $configs = null)
     {
@@ -107,7 +107,7 @@ class EventRegister
 
     /**
      * @param array $events
-     * @return \ServiceSchema\Config\EventRegister
+     * @return \Micronative\ServiceSchema\Config\EventRegister
      */
     public function setEvents(array $events = null)
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace ServiceSchema\Service\Exception;
+namespace Micronative\ServiceSchema\Service\Exception;
 
-use ServiceSchema\Exception\ServiceSchemaException;
+use Micronative\ServiceSchema\Exception\ServiceSchemaException;
 
 class ServiceException extends ServiceSchemaException
 {

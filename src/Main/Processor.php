@@ -1,36 +1,36 @@
 <?php
 
-namespace ServiceSchema\Main;
+namespace Micronative\ServiceSchema\Main;
 
-use ServiceSchema\Config\EventRegister;
-use ServiceSchema\Config\ServiceRegister;
-use ServiceSchema\Event\Message;
-use ServiceSchema\Event\MessageFactory;
-use ServiceSchema\Event\MessageInterface;
-use ServiceSchema\Json\JsonReader;
-use ServiceSchema\Main\Exception\ProcessorException;
-use ServiceSchema\Service\Exception\ServiceException;
-use ServiceSchema\Service\SagaInterface;
-use ServiceSchema\Service\ServiceFactory;
-use ServiceSchema\Service\ServiceInterface;
-use ServiceSchema\Service\ServiceValidator;
+use Micronative\ServiceSchema\Config\EventRegister;
+use Micronative\ServiceSchema\Config\ServiceRegister;
+use Micronative\ServiceSchema\Event\Message;
+use Micronative\ServiceSchema\Event\MessageFactory;
+use Micronative\ServiceSchema\Event\MessageInterface;
+use Micronative\ServiceSchema\Json\JsonReader;
+use Micronative\ServiceSchema\Main\Exception\ProcessorException;
+use Micronative\ServiceSchema\Service\Exception\ServiceException;
+use Micronative\ServiceSchema\Service\SagaInterface;
+use Micronative\ServiceSchema\Service\ServiceFactory;
+use Micronative\ServiceSchema\Service\ServiceInterface;
+use Micronative\ServiceSchema\Service\ServiceValidator;
 
 class Processor implements ProcessorInterface
 {
 
-    /** @var \ServiceSchema\Config\EventRegister */
+    /** @var \Micronative\ServiceSchema\Config\EventRegister */
     protected $eventRegister;
 
-    /** @var \ServiceSchema\Config\ServiceRegister */
+    /** @var \Micronative\ServiceSchema\Config\ServiceRegister */
     protected $serviceRegister;
 
-    /** @var \ServiceSchema\Event\MessageFactory */
+    /** @var \Micronative\ServiceSchema\Event\MessageFactory */
     protected $messageFactory;
 
-    /** @var \ServiceSchema\Service\ServiceFactory */
+    /** @var \Micronative\ServiceSchema\Service\ServiceFactory */
     protected $serviceFactory;
 
-    /** @var \ServiceSchema\Service\ServiceValidator */
+    /** @var \Micronative\ServiceSchema\Service\ServiceValidator */
     protected $serviceValidator;
 
     /**
@@ -39,7 +39,7 @@ class Processor implements ProcessorInterface
      * @param array|null $eventConfigs
      * @param array|null $serviceConfigs
      * @param string|null $schemaDir
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function __construct(array $eventConfigs = null, array $serviceConfigs = null, string $schemaDir = null)
     {
@@ -52,7 +52,7 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     protected function loadConfigs()
     {
