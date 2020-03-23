@@ -52,7 +52,9 @@ events.json
 </pre>
 
 In this events.json:
-- There are 02 events that the microservice is listening to: "Users.afterSaveCommit.Create", "Users.afterSaveCommit.Update"
+- There are 02 events that the microservice is listening to: 
+  - "Users.afterSaveCommit.Create"
+  - "Users.afterSaveCommit.Update"
 - Each of event have a list of services that listen to the event
 
 services.json
@@ -81,7 +83,10 @@ services.json
 </pre>
 
 In this services.json:
-- There are 03 services:  "ServiceSchema\\Tests\\Service\\Samples\\CreateContact", "ServiceSchema\\Tests\\Service\\Samples\\UpdateContact", "ServiceSchema\\Tests\\Service\\Samples\\CreateTask",
+- There are 03 services:  
+  - "ServiceSchema\\Tests\\Service\\Samples\\CreateContact"
+  - "ServiceSchema\\Tests\\Service\\Samples\\UpdateContact"
+  - "ServiceSchema\\Tests\\Service\\Samples\\CreateTask",
 - Each service has a schema and a list of callback services
 
 ### services schema
@@ -195,15 +200,15 @@ $message = '{"name":"Users.afterSaveCommit.Create","time":"20190730123000","payl
 $processor = new Processor(["events.json"], ["services.json"], "serviceSchemaDir");
 // process the message
 $result = $processor->process($message);
-/*
- * In this example, event "Users.afterSaveCommit.Create" has 02 services listening to it (configued in events.json)
- * "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact", "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
- * When $processor->process(message): CreateContact->run(Event) and CreateTask->run(Event) will be executed.
- * Service CreateContact has 02 callback services (configured in services.json): 
- * "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs","Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
- * When CreateContact->run(Event) returns an Event then PushMessageToSqs->run(Event) and PushMessageToLog->run(Event) will be executed
- */
 </pre>
+- In this example, event "Users.afterSaveCommit.Create" has 02 services listening to it (configued in events.json)
+  - "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact"
+  - "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateTask"
+- When $processor->process(message): CreateContact->run(Event) and CreateTask->run(Event) will be executed.
+- Service CreateContact has 02 callback services (configured in services.json): 
+  - "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs"
+  - "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
+- When CreateContact->run(Event) returns an Event then PushMessageToSqs->run(Event) and PushMessageToLog->run(Event) will be executed
 
 ### UUID
 Using Ramsey/Uuid to generate event id
