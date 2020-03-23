@@ -12,9 +12,6 @@ class EventRegisterTest extends TestCase
     /** @var EventRegister $eventRegister */
     protected $eventRegister;
 
-    /**
-     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
-     */
     public function setUp()
     {
         parent::setUp();

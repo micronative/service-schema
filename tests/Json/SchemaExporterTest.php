@@ -16,12 +16,12 @@ class SchemaExporterTest extends TestCase
     protected $message;
 
     /**
-     * @var $processor \ServiceSchema\Main\Processor
+     * @var $processor \Micronative\ServiceSchema\Main\Processor
      */
     protected $processor;
 
     /**
-     * @var $schemaExporter \ServiceSchema\Json\SchemaExporter
+     * @var $schemaExporter \Micronative\ServiceSchema\Json\SchemaExporter
      */
     protected $schemaExporter;
 
@@ -37,9 +37,9 @@ class SchemaExporterTest extends TestCase
     }
 
     /**
-     * @covers ServiceSchema\Json\SchemaExporter::__construct
-     * @covers ServiceSchema\Json\SchemaExporter::export
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Json\SchemaExporter::__construct
+     * @covers \Micronative\ServiceSchema\Json\SchemaExporter::export
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testExport()
     {

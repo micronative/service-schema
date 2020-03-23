@@ -18,8 +18,8 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::read
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Json\JsonReader::read
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testReadFailed()
     {
@@ -31,9 +31,9 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::decode
-     * @covers \ServiceSchema\Json\JsonReader::read
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Json\JsonReader::decode
+     * @covers \Micronative\ServiceSchema\Json\JsonReader::read
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testDecodeFailed()
     {
@@ -42,8 +42,8 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::read
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Json\JsonReader::read
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testRead()
     {
@@ -53,9 +53,9 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::read
-     * @covers \ServiceSchema\Json\JsonReader::decode
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Json\JsonReader::read
+     * @covers \Micronative\ServiceSchema\Json\JsonReader::decode
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testDecode()
     {
@@ -73,8 +73,8 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::encode
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Json\JsonReader::encode
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testEncodeFailed()
     {
@@ -83,8 +83,8 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::encode
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Json\JsonReader::encode
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testEncode()
     {
@@ -94,8 +94,8 @@ class JsonReaderTest extends TestCase
     }
 
     /**
-     * @covers \ServiceSchema\Json\JsonReader::save
-     * @throws \ServiceSchema\Json\Exception\JsonException
+     * @covers \Micronative\ServiceSchema\Json\JsonReader::save
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function testSave()
     {
