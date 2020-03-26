@@ -11,9 +11,12 @@ class ProcessorTest extends TestCase
 {
     protected $testDir;
 
-    /** @var Processor */
+    /** @var \Micronative\ServiceSchema\Main\Processor */
     protected $processor;
 
+    /**
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
+     */
     public function setUp()
     {
         parent::setUp();
@@ -22,7 +25,7 @@ class ProcessorTest extends TestCase
     }
 
     /**
-     * @throws ServiceException
+     * @throws \Micronative\ServiceSchema\Service\Exception\ServiceException
      * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      * @throws \Micronative\ServiceSchema\Main\Exception\ProcessorException
      */
@@ -34,7 +37,7 @@ class ProcessorTest extends TestCase
     }
 
     /**
-     * @throws ServiceException
+     * @throws \Micronative\ServiceSchema\Service\Exception\ServiceException
      * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      * @throws \Micronative\ServiceSchema\Main\Exception\ProcessorException
      */
@@ -46,7 +49,7 @@ class ProcessorTest extends TestCase
     }
 
     /**
-     * @throws ServiceException
+     * @throws \Micronative\ServiceSchema\Service\Exception\ServiceException
      * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      * @throws \Micronative\ServiceSchema\Main\Exception\ProcessorException
      */

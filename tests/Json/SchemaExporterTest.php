@@ -15,17 +15,16 @@ class SchemaExporterTest extends TestCase
     /** @var string */
     protected $message;
 
-    /**
-     * @var $processor \Micronative\ServiceSchema\Main\Processor
-     */
+    /** @var \Micronative\ServiceSchema\Main\Processor */
     protected $processor;
 
-    /**
-     * @var $schemaExporter \Micronative\ServiceSchema\Json\SchemaExporter
-     */
+    /** @var \Micronative\ServiceSchema\Json\SchemaExporter */
     protected $schemaExporter;
 
 
+    /**
+     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
+     */
     public function setUp()
     {
         parent::setUp();
