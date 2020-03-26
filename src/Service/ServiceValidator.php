@@ -20,6 +20,7 @@ class ServiceValidator
      * EventValidator constructor.
      *
      * @param \JsonSchema\Validator|null $validator
+     * @param string $schemaDir
      */
     public function __construct(Validator $validator = null, string $schemaDir = null)
     {
@@ -54,7 +55,7 @@ class ServiceValidator
     /**
      * @return \JsonSchema\Validator
      */
-    public function getValidator(): Validator
+    public function getValidator()
     {
         return $this->validator;
     }
@@ -63,7 +64,7 @@ class ServiceValidator
      * @param \JsonSchema\Validator $validator
      * @return \Micronative\ServiceSchema\Service\ServiceValidator
      */
-    public function setValidator(Validator $validator = null): ServiceValidator
+    public function setValidator(Validator $validator = null)
     {
         $this->validator = $validator;
 
@@ -73,7 +74,7 @@ class ServiceValidator
     /**
      * @return string
      */
-    public function getSchemaDir(): string
+    public function getSchemaDir()
     {
         return $this->schemaDir;
     }
@@ -82,7 +83,7 @@ class ServiceValidator
      * @param string $schemaDir
      * @return \Micronative\ServiceSchema\Service\ServiceValidator
      */
-    public function setSchemaDir(?string $schemaDir = null): ServiceValidator
+    public function setSchemaDir(?string $schemaDir = null)
     {
         $this->schemaDir = $schemaDir;
 

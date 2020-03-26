@@ -8,7 +8,7 @@ use Micronative\ServiceSchema\Main\Processor;
 class SchemaExporter
 {
 
-    /** @var \ServiceSchema\Main\Processor */
+    /** @var \Micronative\ServiceSchema\Main\Processor */
     protected $processor;
 
     const SCHEMA_EXTENSION = 'json';

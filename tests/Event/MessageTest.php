@@ -7,7 +7,7 @@ use Micronative\ServiceSchema\Event\Message;
 
 class MessageTest extends TestCase
 {
-
+    /** @var string */
     protected $testDir;
 
     public function setUp()

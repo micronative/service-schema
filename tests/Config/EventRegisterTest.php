@@ -7,6 +7,7 @@ use Micronative\ServiceSchema\Config\EventRegister;
 
 class EventRegisterTest extends TestCase
 {
+    /** @var string */
     protected $testDir;
 
     /** @var EventRegister $eventRegister */

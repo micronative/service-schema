@@ -7,14 +7,12 @@ use Micronative\ServiceSchema\Config\ServiceRegister;
 
 class ServiceRegisterTest extends TestCase
 {
+    /** @var string */
     protected $testDir;
 
     /** @var ServiceRegister */
     protected $serviceRegister;
 
-    /**
-     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
-     */
     public function setUp()
     {
         parent::setUp();

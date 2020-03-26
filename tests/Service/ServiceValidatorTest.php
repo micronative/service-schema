@@ -9,7 +9,9 @@ use Micronative\ServiceSchema\Tests\Service\Samples\CreateContact;
 
 class ServiceValidatorTest extends TestCase
 {
+    /** @var string */
     protected $testDir;
+
     /** @var ServiceValidator */
     protected $serviceValidator;
 

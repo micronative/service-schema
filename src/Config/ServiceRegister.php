@@ -20,7 +20,6 @@ class ServiceRegister
      * ServiceRegister constructor.
      *
      * @param array|null $configs
-     * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function __construct(array $configs = null)
     {
@@ -79,7 +78,7 @@ class ServiceRegister
     /**
      * @return array
      */
-    public function getConfigs(): array
+    public function getConfigs()
     {
         return $this->configs;
     }

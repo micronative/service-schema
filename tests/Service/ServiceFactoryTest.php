@@ -8,7 +8,9 @@ use Micronative\ServiceSchema\Service\ServiceInterface;
 
 class ServiceFactoryTest extends TestCase
 {
+    /** @var string */
     protected $testDir;
+
     /** @var ServiceFactory */
     protected $serviceFactory;
 

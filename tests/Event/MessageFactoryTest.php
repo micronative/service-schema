@@ -8,6 +8,7 @@ use Micronative\ServiceSchema\Event\MessageFactory;
 
 class MessageFactoryTest extends TestCase
 {
+    /** @var string */
     protected $testDir;
 
     public function setUp()

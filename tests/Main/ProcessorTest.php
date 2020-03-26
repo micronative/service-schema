@@ -22,7 +22,9 @@ class ProcessorTest extends TestCase
     }
 
     /**
+     * @throws ServiceException
      * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Main\Exception\ProcessorException
      */
     public function testProcess()
     {
@@ -32,7 +34,9 @@ class ProcessorTest extends TestCase
     }
 
     /**
+     * @throws ServiceException
      * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Main\Exception\ProcessorException
      */
     public function testProcessFailed()
     {
@@ -42,7 +46,9 @@ class ProcessorTest extends TestCase
     }
 
     /**
+     * @throws ServiceException
      * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
+     * @throws \Micronative\ServiceSchema\Main\Exception\ProcessorException
      */
     public function testRollback()
     {

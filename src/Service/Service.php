@@ -4,12 +4,21 @@
 namespace Micronative\ServiceSchema\Service;
 
 
+use Psr\Container\ContainerInterface;
+
 class Service
 {
     /** @var string */
     protected $name;
     /** @var string */
     protected $jsonSchema;
+    /** @var \Psr\Container\ContainerInterface */
+    protected $container;
+
+    public function __construct(ContainerInterface $container = null)
+    {
+        $this->container = $container;
+    }
 
     /**
      * @return string
@@ -49,4 +58,21 @@ class Service
         return $this;
     }
 
+    /**
+     * @return \Psr\Container\ContainerInterface
+     */
+    public function getContainer()
+    {
+        return $this->container;
+    }
+
+    /**
+     * @param \Psr\Container\ContainerInterface $container
+     * @return Service
+     */
+    public function setContainer(ContainerInterface $container = null)
+    {
+        $this->container = $container;
+        return $this;
+    }
 }
