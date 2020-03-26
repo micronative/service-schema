@@ -35,14 +35,4 @@ interface ServiceInterface
      */
     public function getName();
 
-    /**
-     * @return \Psr\Container\ContainerInterface
-     */
-    public function getContainer();
-
-    /**
-     * @param \Psr\Container\ContainerInterface $container
-     * @return Service
-     */
-    public function setContainer(ContainerInterface $container = null);
 }
