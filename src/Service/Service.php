@@ -1,12 +1,10 @@
 <?php
 
-
 namespace Micronative\ServiceSchema\Service;
-
 
 use Psr\Container\ContainerInterface;
 
-class Service
+abstract class Service implements ServiceInterface
 {
     /** @var string */
     protected $name;
@@ -14,12 +12,12 @@ class Service
     protected $jsonSchema;
     /** @var \Psr\Container\ContainerInterface */
     protected $container;
-
+    
     public function __construct(ContainerInterface $container = null)
     {
         $this->container = $container;
     }
-
+    
     /**
      * @return string
      */
@@ -27,7 +25,7 @@ class Service
     {
         return $this->jsonSchema;
     }
-
+    
     /**
      * @param string $schema
      * @return Service
@@ -35,10 +33,10 @@ class Service
     public function setJsonSchema(string $schema = null)
     {
         $this->jsonSchema = $schema;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -46,7 +44,7 @@ class Service
     {
         return $this->name;
     }
-
+    
     /**
      * @param string $name
      * @return Service
@@ -54,10 +52,10 @@ class Service
     public function setName(string $name = null)
     {
         $this->name = $name;
-
+        
         return $this;
     }
-
+    
     /**
      * @return \Psr\Container\ContainerInterface
      */
@@ -65,7 +63,7 @@ class Service
     {
         return $this->container;
     }
-
+    
     /**
      * @param \Psr\Container\ContainerInterface $container
      * @return Service
@@ -73,6 +71,7 @@ class Service
     public function setContainer(ContainerInterface $container = null)
     {
         $this->container = $container;
+        
         return $this;
     }
 }

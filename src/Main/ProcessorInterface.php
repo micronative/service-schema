@@ -9,7 +9,7 @@ interface ProcessorInterface
 {
 
     /**
-     * @param string|\Micronative\ServiceSchema\Event\Message $json
+     * @param string|\Micronative\ServiceSchema\Event\MessageInterface $json
      * @param bool $return return first service result
      * @param array|null $filteredEvents
      * @return bool
@@ -20,7 +20,7 @@ interface ProcessorInterface
     public function process($json = null, array $filteredEvents = null, bool $return = false);
 
     /**
-     * @param string|\Micronative\ServiceSchema\Event\Message $json
+     * @param string|\Micronative\ServiceSchema\Event\MessageInterface $json
      * @return bool
      * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      * @throws \Micronative\ServiceSchema\Main\Exception\ProcessorException

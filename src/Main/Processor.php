@@ -71,7 +71,7 @@ class Processor implements ProcessorInterface
     }
 
     /**
-     * @param string|\Micronative\ServiceSchema\Event\Message $message
+     * @param string|\Micronative\ServiceSchema\Event\MessageInterface $message
      * @param bool $return return first service result
      * @param array|null $filteredEvents
      * @return bool
@@ -122,7 +122,7 @@ class Processor implements ProcessorInterface
 
     /**
      * @param $json
-     * @return false|\Micronative\ServiceSchema\Event\Message
+     * @return false|\Micronative\ServiceSchema\Event\MessageInterface
      * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      * @throws \Micronative\ServiceSchema\Main\Exception\ProcessorException
      */

@@ -10,7 +10,7 @@ class MessageFactory
 
     /**
      * @param string|null $json
-     * @return false|\Micronative\ServiceSchema\Event\Message
+     * @return false|\Micronative\ServiceSchema\Event\MessageInterface
      * @throws \Micronative\ServiceSchema\Json\Exception\JsonException
      */
     public function createMessage(string $json = null)
