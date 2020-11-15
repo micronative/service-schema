@@ -2,7 +2,7 @@
 
 namespace Micronative\ServiceSchema\Config\Exception;
 
-use Micronative\ServiceSchema\Exception\ServiceSchemaException;
+use Micronative\ServiceSchema\Exceptions\ServiceSchemaException;
 
 class ConfigException extends ServiceSchemaException
 {

@@ -2,7 +2,7 @@
 
 namespace Micronative\ServiceSchema\Json\Exception;
 
-use Micronative\ServiceSchema\Exception\ServiceSchemaException;
+use Micronative\ServiceSchema\Exceptions\ServiceSchemaException;
 
 class SchemaExporterException extends ServiceSchemaException
 {

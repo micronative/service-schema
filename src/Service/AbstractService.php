@@ -4,12 +4,14 @@ namespace Micronative\ServiceSchema\Service;
 
 use Psr\Container\ContainerInterface;
 
-abstract class Service implements ServiceInterface
+abstract class AbstractService implements ServiceInterface
 {
     /** @var string */
     protected $name;
+
     /** @var string */
     protected $jsonSchema;
+
     /** @var \Psr\Container\ContainerInterface */
     protected $container;
     
@@ -27,8 +29,8 @@ abstract class Service implements ServiceInterface
     }
     
     /**
-     * @param string $schema
-     * @return Service
+     * @param string|null $schema
+     * @return AbstractService
      */
     public function setJsonSchema(string $schema = null)
     {
@@ -46,8 +48,8 @@ abstract class Service implements ServiceInterface
     }
     
     /**
-     * @param string $name
-     * @return Service
+     * @param string|null $name
+     * @return AbstractService
      */
     public function setName(string $name = null)
     {
@@ -65,8 +67,8 @@ abstract class Service implements ServiceInterface
     }
     
     /**
-     * @param \Psr\Container\ContainerInterface $container
-     * @return Service
+     * @param \Psr\Container\ContainerInterface|null $container
+     * @return AbstractService
      */
     public function setContainer(ContainerInterface $container = null)
     {

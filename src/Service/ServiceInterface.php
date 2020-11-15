@@ -2,19 +2,18 @@
 
 namespace Micronative\ServiceSchema\Service;
 
-use Micronative\ServiceSchema\Event\MessageInterface;
-use Psr\Container\ContainerInterface;
+use Micronative\ServiceSchema\Event\AbstractEvent;
 
 interface ServiceInterface
 {
     /**
-     * @param \Micronative\ServiceSchema\Event\MessageInterface $message
-     * @return \Micronative\ServiceSchema\Event\MessageInterface|bool
+     * @param \Micronative\ServiceSchema\Event\AbstractEvent $event
+     * @return \Micronative\ServiceSchema\Event\AbstractEvent|bool
      */
-    public function consume(MessageInterface $message = null);
+    public function consume(AbstractEvent $event);
 
     /**
-     * @param string $schema
+     * @param string|null $schema
      * @return bool
      */
     public function setJsonSchema(string $schema = null);
@@ -25,7 +24,7 @@ interface ServiceInterface
     public function getJsonSchema();
 
     /**
-     * @param string $name
+     * @param string|null $name
      * @return bool
      */
     public function setName(string $name = null);

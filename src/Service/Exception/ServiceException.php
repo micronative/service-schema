@@ -2,7 +2,7 @@
 
 namespace Micronative\ServiceSchema\Service\Exception;
 
-use Micronative\ServiceSchema\Exception\ServiceSchemaException;
+use Micronative\ServiceSchema\Exceptions\ServiceSchemaException;
 
 class ServiceException extends ServiceSchemaException
 {

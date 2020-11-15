@@ -2,9 +2,9 @@
 
 namespace Micronative\ServiceSchema\Event\Exception;
 
-use Micronative\ServiceSchema\Exception\ServiceSchemaException;
+use Micronative\ServiceSchema\Exceptions\ServiceSchemaException;
 
-class MessageValidatorException extends ServiceSchemaException
+class EventValidatorException extends ServiceSchemaException
 {
     const INVALID_JSON_STRING = "Message->toJson is invalid Json string.";
     const MISSING_EVENT_SCHEMA = "Event schema is missing.";

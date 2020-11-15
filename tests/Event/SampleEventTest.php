@@ -3,9 +3,8 @@
 namespace Micronative\ServiceSchema\Tests\Event;
 
 use PHPUnit\Framework\TestCase;
-use Micronative\ServiceSchema\Event\Message;
 
-class MessageTest extends TestCase
+class SampleEventTest extends TestCase
 {
     /** @var string */
     protected $testDir;
@@ -39,8 +38,8 @@ class MessageTest extends TestCase
      */
     public function testToJson()
     {
-        $event = new Message();
-        $event->setEvent("Test.Event.Name");
+        $event = new SampleEvent();
+        $event->setName("Test.Event.Name");
         $event->setTime("SomeTimeString");
         $event->setPayload((object) ["name" => "Ken"]);
         $event->setStatus("new");
@@ -73,10 +72,6 @@ class MessageTest extends TestCase
         $event->setSource('source');
         $entity = $event->getSource();
         $this->assertSame($entity, 'source');
-
-        $event->setSagaId('sagaId');
-        $entity = $event->getSagaId();
-        $this->assertSame($entity, 'sagaId');
 
         $event->setAttribute('attr', 'val');
         $entity = $event->getAttribute('attr');

@@ -3,7 +3,7 @@
 
 namespace Micronative\ServiceSchema\Main\Exception;
 
-use Micronative\ServiceSchema\Exception\ServiceSchemaException;
+use Micronative\ServiceSchema\Exceptions\ServiceSchemaException;
 
 class ProcessorException extends ServiceSchemaException
 {

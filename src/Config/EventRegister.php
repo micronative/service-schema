@@ -85,7 +85,7 @@ class EventRegister
     }
 
     /**
-     * @param array $configs
+     * @param array|null $configs
      * @return \Micronative\ServiceSchema\Config\EventRegister
      */
     public function setConfigs(array $configs = null)
@@ -104,7 +104,7 @@ class EventRegister
     }
 
     /**
-     * @param array $events
+     * @param array|null $events
      * @return \Micronative\ServiceSchema\Config\EventRegister
      */
     public function setEvents(array $events = null)
