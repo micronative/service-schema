@@ -74,10 +74,6 @@ class ProcessorTest extends TestCase
         $this->processor->setServiceRegister($serviceRegister);
         $this->assertSame($serviceRegister, $this->processor->getServiceRegister());
 
-        $messageFactory = $this->processor->getMessageFactory();
-        $this->processor->setMessageFactory($messageFactory);
-        $this->assertSame($messageFactory, $this->processor->getMessageFactory());
-
         $serviceFactory = $this->processor->getServiceFactory();
         $this->processor->setServiceFactory($serviceFactory);
         $this->assertSame($serviceFactory, $this->processor->getServiceFactory());
