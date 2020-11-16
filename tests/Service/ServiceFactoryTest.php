@@ -29,9 +29,9 @@ class ServiceFactoryTest extends TestCase
     public function testCreateService()
     {
         $serviceClass = "\Micronative\ServiceSchema\Tests\Service\Samples\CreateContact";
-        $schema = $this->testDir . "/jsons/schemas/CreateContact.json";
+        $schema = $this->testDir . "/assets/schemas/CreateContact.json";
         $service = $this->serviceFactory->createService($serviceClass, $schema);
         $this->assertTrue($service instanceof ServiceInterface);
-        $this->assertEquals($this->testDir . "/jsons/schemas/CreateContact.json", $service->getJsonSchema());
+        $this->assertEquals($this->testDir . "/assets/schemas/CreateContact.json", $service->getJsonSchema());
     }
 }

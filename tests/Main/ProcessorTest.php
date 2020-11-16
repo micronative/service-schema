@@ -21,7 +21,7 @@ class ProcessorTest extends TestCase
     {
         parent::setUp();
         $this->testDir = dirname(dirname(__FILE__));
-        $this->processor = new Processor([$this->testDir . "/jsons/configs/events.json"], [$this->testDir . "/jsons/configs/services.json"], $this->testDir);
+        $this->processor = new Processor([$this->testDir . "/assets/configs/events.json"], [$this->testDir . "/assets/configs/services.json"], $this->testDir);
     }
 
     /**
@@ -31,7 +31,7 @@ class ProcessorTest extends TestCase
      */
     public function testProcess()
     {
-        $message = JsonReader::read($this->testDir . "/jsons/messages/Users.afterSaveCommit.Create.json");
+        $message = JsonReader::read($this->testDir . "/assets/messages/Users.afterSaveCommit.Create.json");
         $result = $this->processor->process($message);
         $this->assertTrue(is_bool($result));
     }
@@ -43,7 +43,7 @@ class ProcessorTest extends TestCase
      */
     public function testProcessFailed()
     {
-        $message = JsonReader::read($this->testDir . "/jsons/messages/Users.afterSaveCommit.Create.Failed.json");
+        $message = JsonReader::read($this->testDir . "/assets/messages/Users.afterSaveCommit.Create.Failed.json");
         $this->expectException(ServiceException::class);
         $this->processor->process($message);
     }
@@ -55,7 +55,7 @@ class ProcessorTest extends TestCase
      */
     public function testRollback()
     {
-        $message = JsonReader::read($this->testDir . "/jsons/messages/Users.afterSaveCommit.Create.json");
+        $message = JsonReader::read($this->testDir . "/assets/messages/Users.afterSaveCommit.Create.json");
         $result = $this->processor->rollback($message);
         $this->assertTrue(is_bool($result));
     }

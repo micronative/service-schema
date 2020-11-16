@@ -1,7 +1,7 @@
 [
   {
     "service": "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateContact",
-    "schema": "/jsons/schemas/CreateContact.json",
+    "schema": "/assets/schemas/CreateContact.json",
     "callbacks": [
       "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToSqs",
       "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
@@ -9,13 +9,13 @@
   },
   {
     "service": "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\UpdateContact",
-    "schema": "/jsons/schemas/UpdateContact.json",
+    "schema": "/assets/schemas/UpdateContact.json",
     "callbacks": [
       "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\PushMessageToLog"
     ]
   },
   {
     "service": "Micronative\\ServiceSchema\\Tests\\Service\\Samples\\CreateTask",
-    "schema": "/jsons/schemas/CreateTask.json"
+    "schema": "/assets/schemas/CreateTask.json"
   }
 ]

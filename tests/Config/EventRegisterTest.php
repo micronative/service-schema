@@ -17,7 +17,7 @@ class EventRegisterTest extends TestCase
     {
         parent::setUp();
         $this->testDir = dirname(dirname(__FILE__));
-        $this->eventRegister = new EventRegister([$this->testDir . "/jsons/configs/events.json"]);
+        $this->eventRegister = new EventRegister([$this->testDir . "/assets/configs/events.json"]);
     }
 
     /**
