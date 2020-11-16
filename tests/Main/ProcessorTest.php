@@ -5,6 +5,7 @@ namespace Micronative\ServiceSchema\Tests\Main;
 use Micronative\ServiceSchema\Json\JsonReader;
 use Micronative\ServiceSchema\Main\Processor;
 use Micronative\ServiceSchema\Service\Exception\ServiceException;
+use Micronative\ServiceSchema\Tests\Event\SampleEvent;
 use PHPUnit\Framework\TestCase;
 
 class ProcessorTest extends TestCase
@@ -31,8 +32,9 @@ class ProcessorTest extends TestCase
      */
     public function testProcess()
     {
-        $message = JsonReader::read($this->testDir . "/assets/events/Users.afterSaveCommit.Create.json");
-        $result = $this->processor->process($message);
+        $data = JsonReader::decode(JsonReader::read($this->testDir . "/assets/events/Users.afterSaveCommit.Create.json"), true);
+        $event = new SampleEvent($data);
+        $result = $this->processor->process($event);
         $this->assertTrue(is_bool($result));
     }
 
@@ -43,9 +45,10 @@ class ProcessorTest extends TestCase
      */
     public function testProcessFailed()
     {
-        $message = JsonReader::read($this->testDir . "/assets/events/Users.afterSaveCommit.Create.Failed.json");
+        $data = JsonReader::decode(JsonReader::read($this->testDir . "/assets/events/Users.afterSaveCommit.Create.Failed.json"), true);
+        $event = new SampleEvent($data);
         $this->expectException(ServiceException::class);
-        $this->processor->process($message);
+        $this->processor->process($event);
     }
 
     /**
@@ -55,8 +58,9 @@ class ProcessorTest extends TestCase
      */
     public function testRollback()
     {
-        $message = JsonReader::read($this->testDir . "/assets/events/Users.afterSaveCommit.Create.json");
-        $result = $this->processor->rollback($message);
+        $data = JsonReader::decode(JsonReader::read($this->testDir . "/assets/events/Users.afterSaveCommit.Create.json"), true);
+        $event = new SampleEvent($data);
+        $result = $this->processor->rollback($event);
         $this->assertTrue(is_bool($result));
     }
 
