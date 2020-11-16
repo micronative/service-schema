@@ -33,7 +33,7 @@ class ServiceValidatorTest extends TestCase
      */
     public function testValidate()
     {
-        $file = $this->testDir . "/assets/messages/Users.afterSaveCommit.Create.json";
+        $file = $this->testDir . "/assets/events/Users.afterSaveCommit.Create.json";
         $jsonObject = JsonReader::decode(JsonReader::read($file));
         $service = new CreateContact();
         $service->setJsonSchema($this->testDir . "/assets/schemas/CreateContact.json");

@@ -17,15 +17,11 @@ use Psr\Container\ContainerInterface;
 
 class Processor implements ProcessorInterface
 {
-
     /** @var \Micronative\ServiceSchema\Config\EventRegister */
     protected $eventRegister;
 
     /** @var \Micronative\ServiceSchema\Config\ServiceRegister */
     protected $serviceRegister;
-
-    /** @var \Micronative\ServiceSchema\Event\MessageFactory */
-    protected $messageFactory;
 
     /** @var \Micronative\ServiceSchema\Service\ServiceFactory */
     protected $serviceFactory;
@@ -54,7 +50,6 @@ class Processor implements ProcessorInterface
         $this->eventRegister = new EventRegister($eventConfigs);
         $this->serviceRegister = new ServiceRegister($serviceConfigs);
         $this->serviceFactory = new ServiceFactory();
-        $this->messageFactory = new MessageFactory();
         $this->serviceValidator = new ServiceValidator(null, $schemaDir);
         $this->container = $container;
         $this->loadConfigs();
